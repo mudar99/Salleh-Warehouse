@@ -1,0 +1,10 @@
+@import "../../../style/vars";
+.table {
+  margin-top: 30px;
+  .product-image {
+    width: 100px;
+  }
+  .p-column-title {
+    color: $primary-color;
+  }
+}

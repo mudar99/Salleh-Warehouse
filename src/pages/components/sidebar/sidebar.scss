@@ -1,0 +1,105 @@
+@import "../../../style/vars";
+.sidebar {
+  flex: 1;
+  border-left: 0.5px solid rgb(230, 227, 227);
+  min-height: 100vh;
+  background-color: $nav-color;
+
+  .top {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: $list-color;
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  hr {
+    height: 0;
+    border: 0.5px solid rgb(230, 227, 227);
+  }
+
+  .center {
+    padding-right: 10px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .header {
+        &:hover{
+          background-color: #eee;
+          cursor: pointer;
+        }
+        .title {
+          // border: solid 2px red;
+          font-size: 14px;
+          font-weight: bold;
+          color: $list-color;
+          margin: 10px;
+        }
+        // border: solid 2px red;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .visited {
+        background-color: #eee;
+      }
+
+      li {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+        padding: 8px;
+        &:hover {
+          background-color: #eee;
+        }
+
+        i {
+          // margin-right: 10px;
+          font-size: 17px;
+          color: $primary-color;
+        }
+
+        span {
+          font-size: 13px;
+          font-weight: 900;
+          color: $primary-color;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    margin: 70px;
+    .colorOption {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 5px;
+
+      &:nth-child(1) {
+        border: 1px solid #7451f8;
+        background-color: whitesmoke;
+      }
+      &:nth-child(2) {
+        background-color: $hover-color;
+      }
+      &:nth-child(3) {
+        background-color: darkblue;
+      }
+    }
+  }
+}

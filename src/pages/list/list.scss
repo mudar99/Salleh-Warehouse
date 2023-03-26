@@ -1,0 +1,9 @@
+@import "../../style/vars";
+.list {
+  display: flex;
+  width: 100%;
+  .listContainer {
+    border-radius: 10px;
+    flex: 6;
+  }
+}

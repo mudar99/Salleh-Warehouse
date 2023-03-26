@@ -1,0 +1,84 @@
+@import "../../style/vars";
+.login {
+  height: 100vh;
+  .loginContainer {
+    background-color: $body-color;
+    box-shadow: 2px 4px 10px 1px $dark-font-color;
+    border-radius: 10px;
+    width: 50%;
+    padding: 30px;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    .logo {
+      text-align: center;
+      img {
+        height: auto;
+        width: 150px;
+      }
+    }
+    .title {
+      color: $header-color;
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 50px;
+      input {
+        font-size: 18px;
+        &:hover {
+          border-color: $primary-color;
+        }
+        &:focus {
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+        }
+      }
+      .card {
+        input {
+          text-align: left;
+          direction: ltr;
+        }
+        margin-top: 40px;
+        label {
+          display: flex;
+          color: $primary-color;
+          font-size: 14px;
+          font-weight: 700;
+          p {
+            margin-right: 10px;
+          }
+        }
+      }
+      .submit {
+        text-align: center;
+        margin-top: 20px;
+        .p-button {
+          margin-top: 30px;
+          background-color: $primary-color;
+          color: $home-color;
+          &-raised:focus {
+            box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          }
+        }
+      }
+    }
+    .p-float-label > label {
+      right: 0.75rem;
+      margin-top: -0.5rem;
+    }
+    .p-float-label input:focus ~ label,
+    .p-float-label input.p-filled ~ label {
+      top: -1.2rem;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    .loginContainer {
+      width: 80%;
+      padding: 30px;
+      margin-top: 15%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
+}

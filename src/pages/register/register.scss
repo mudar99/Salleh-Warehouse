@@ -1,0 +1,108 @@
+@import "../../style/vars";
+.register {
+  height: 150vh;
+  .registerContainer {
+    background-color: $body-color;
+    box-shadow: 2px 4px 10px 1px $dark-font-color;
+    border-radius: 10px;
+    width: 50%;
+    padding: 30px;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5%;
+    .logo {
+      text-align: center;
+      img {
+        height: auto;
+        width: 150px;
+      }
+    }
+    .title {
+      color: $header-color;
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 50px;
+      input {
+        font-size: 18px;
+        &:hover {
+          border-color: $primary-color;
+        }
+        &:focus {
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+        }
+      }
+      .fullName {
+        display: flex;
+        .fname {
+          margin-left: 10px;
+          width: 50%;
+        }
+        .lname {
+          margin-right: 10px;
+          width: 50%;
+        }
+      }
+      .card {
+        input {
+          text-align: left;
+          direction: ltr;
+        }
+        margin-top: 40px;
+        label {
+          display: flex;
+          color: $primary-color;
+          font-size: 14px;
+          font-weight: 700;
+          p {
+            margin-right: 10px;
+          }
+        }
+      }
+      .submit {
+        text-align: center;
+        margin-top: 20px;
+        .p-button {
+          margin-top: 30px;
+          background-color: $primary-color;
+          color: $home-color;
+          &-raised:focus {
+            box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          }
+        }
+      }
+    }
+    .p-float-label > label {
+      right: 0.75rem;
+      margin-top: -0.5rem;
+    }
+    .p-float-label input:focus ~ label,
+    .p-float-label input.p-filled ~ label {
+      top: -1.2rem;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    .registerContainer {
+      width: 80%;
+      padding: 30px;
+      margin-top: 5%;
+      margin-left: 10%;
+      margin-right: 10%;
+      form {
+        .fullName {
+          display: block;
+          .fname {
+            width: 100%;
+          }
+          .lname {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

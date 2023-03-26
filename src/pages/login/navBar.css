@@ -1,0 +1,54 @@
+.navBar {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navBar .list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  list-style: none;
+  gap: 1em;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.navBar .list a:link {
+  text-decoration: none;
+}
+
+.navBar .list .item {
+  margin-left: 10px;
+  color: #daa520;
+  border-radius: 10px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+.navBar .list .item:hover {
+  background-color: #eee;
+  border-radius: 5px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.navBar img {
+  width: auto;
+  height: 70px;
+  margin: 0;
+  padding: 10px;
+}
+/*# sourceMappingURL=navBar.css.map */

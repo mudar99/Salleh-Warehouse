@@ -1,0 +1,42 @@
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home .homeContainer {
+  background-color: #f1f5f9;
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.home .homeContainer .widgets,
+.home .homeContainer .charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.home .homeContainer .charts {
+  padding: 5px 20px;
+}
+
+.home .homeContainer .listContainer {
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 4px 10px 1px #c9c9c9;
+          box-shadow: 2px 4px 10px 1px #c9c9c9;
+  padding: 20px;
+  margin: 20px;
+}
+
+.home .homeContainer .listContainer .listTitle {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #daa520;
+}
+/*# sourceMappingURL=home.css.map */

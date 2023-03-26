@@ -1,0 +1,21 @@
+@import "../../../style/vars";
+.chart {
+  flex: 4;
+  box-shadow: 2px 4px 10px 1px $dark-font-color;
+  padding: 5px;
+  color: $header-color;
+  background-color: $body-color;
+  border-radius: 10px;
+
+  .title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 14px;
+    color: $header-color;
+  }
+
+  .chartGrid {
+    stroke: rgb(228, 225, 225);
+  }
+}

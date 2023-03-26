@@ -1,0 +1,230 @@
+.app.dark {
+  background-color: #212529;
+  color: #9c9c9c;
+}
+
+.app.dark .register .navBar,
+.app.dark .login .navBar {
+  background: #212121;
+}
+
+.app.dark .register .navBar .list .item,
+.app.dark .login .navBar .list .item {
+  color: #daa520;
+}
+
+.app.dark .register .navBar .list .item:hover,
+.app.dark .login .navBar .list .item:hover {
+  background-color: #2e2e2e;
+}
+
+.app.dark .register .registerContainer,
+.app.dark .register .loginContainer,
+.app.dark .login .registerContainer,
+.app.dark .login .loginContainer {
+  background: #212121;
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+}
+
+.app.dark .register .registerContainer .title,
+.app.dark .register .loginContainer .title,
+.app.dark .login .registerContainer .title,
+.app.dark .login .loginContainer .title {
+  color: #daa520;
+}
+
+.app.dark .register .registerContainer form input,
+.app.dark .register .loginContainer form input,
+.app.dark .login .registerContainer form input,
+.app.dark .login .loginContainer form input {
+  background-color: #212121;
+  color: #c9c9c9;
+  border-color: #daa520;
+}
+
+.app.dark .register .registerContainer form input:hover,
+.app.dark .register .loginContainer form input:hover,
+.app.dark .login .registerContainer form input:hover,
+.app.dark .login .loginContainer form input:hover {
+  border-color: #ffffff;
+}
+
+.app.dark .register .registerContainer form input:focus,
+.app.dark .register .loginContainer form input:focus,
+.app.dark .login .registerContainer form input:focus,
+.app.dark .login .loginContainer form input:focus {
+  -webkit-box-shadow: 0 7px 30px -10px #2e2e2e;
+          box-shadow: 0 7px 30px -10px #2e2e2e;
+  border-color: #ffffff;
+}
+
+.app.dark .register .registerContainer form .card,
+.app.dark .register .loginContainer form .card,
+.app.dark .login .registerContainer form .card,
+.app.dark .login .loginContainer form .card {
+  background: #212121;
+}
+
+.app.dark .register .registerContainer form .card label,
+.app.dark .register .loginContainer form .card label,
+.app.dark .login .registerContainer form .card label,
+.app.dark .login .loginContainer form .card label {
+  color: #4a8bdf;
+}
+
+.app.dark .register .registerContainer form .submit .p-button,
+.app.dark .register .loginContainer form .submit .p-button,
+.app.dark .login .registerContainer form .submit .p-button,
+.app.dark .login .loginContainer form .submit .p-button {
+  background-color: #4a8bdf;
+  color: #f1f5f9;
+}
+
+.app.dark .register .registerContainer form .submit .p-button-raised:focus,
+.app.dark .register .loginContainer form .submit .p-button-raised:focus,
+.app.dark .login .registerContainer form .submit .p-button-raised:focus,
+.app.dark .login .loginContainer form .submit .p-button-raised:focus {
+  -webkit-box-shadow: 0 7px 30px -10px #2e2e2e;
+          box-shadow: 0 7px 30px -10px #2e2e2e;
+}
+
+.app.dark .home .homeContainer {
+  background-color: #212529;
+}
+
+.app.dark .home .listContainer {
+  background-color: #212121;
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+}
+
+.app.dark .chart {
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+  background-color: #212121;
+}
+
+.app.dark .chart .chartGrid {
+  stroke: rgba(228, 228, 228, 0.219);
+}
+
+.app.dark .navbar {
+  color: #c9c9c9;
+  border-color: #2e2e2e;
+  background-color: #212121;
+}
+
+.app.dark .navbar .search .p-inputtext {
+  border-color: #c9c9c9;
+}
+
+.app.dark .navbar .search .p-inputtext:focus {
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+}
+
+.app.dark .sidebar {
+  background-color: #212121;
+  border-color: #c9c9c9;
+  border-left: 0.5px solid #2e2e2e;
+}
+
+.app.dark .sidebar .top .logo {
+  color: #daa520;
+}
+
+.app.dark .sidebar hr {
+  border-color: #2e2e2e;
+}
+
+.app.dark .sidebar ul .header:hover {
+  background-color: #2e2e2e;
+}
+
+.app.dark .sidebar ul .header .title {
+  color: #daa520;
+}
+
+.app.dark .sidebar ul .visited {
+  background-color: #2e2e2e;
+}
+
+.app.dark .sidebar ul li:hover {
+  background-color: #2e2e2e;
+}
+
+.app.dark .sidebar ul li span {
+  color: #c9c9c9;
+}
+
+.app.dark .sidebar ul li i {
+  color: #c9c9c9;
+}
+
+.app.dark .widget {
+  background-color: #212121;
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+}
+
+.app.dark .table .p-datatable-thead > tr > th,
+.app.dark .table .p-datatable-tbody > tr {
+  background-color: #212121;
+}
+
+.app.dark .table .p-datatable-tbody > tr > td,
+.app.dark .table .p-datatable-thead > tr > th {
+  color: #c9c9c9;
+}
+
+.app.dark .table .p-column-title {
+  color: #c9c9c9;
+}
+
+.app.dark .datatable .header,
+.app.dark .datatable .p-datatable-header {
+  background: #212121;
+}
+
+.app.dark .datatable .p-datatable-thead > tr > th,
+.app.dark .datatable .p-datatable-tbody > tr {
+  background-color: #212121;
+}
+
+.app.dark .datatable .p-datatable-tbody > tr > td,
+.app.dark .datatable .p-datatable-thead > tr > th {
+  color: #c9c9c9;
+}
+
+.app.dark .datatable .p-paginator {
+  background-color: #212121;
+}
+
+.app.dark .featured {
+  background-color: #212121;
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+}
+
+.app.dark .featured .bottom .title {
+  color: #c9c9c9;
+}
+
+.app.dark .featured .bottom .desc {
+  color: #c9c9c9;
+}
+
+.app.dark .featured .bottom .summary .item .itemTitle {
+  color: #4a8bdf;
+}
+
+.app.dark .single .singleContainer .top .left .item .details .itemTitle {
+  color: #c9c9c9;
+}
+
+.app.dark input {
+  background-color: transparent;
+  color: #212121;
+}
+/*# sourceMappingURL=dark.css.map */

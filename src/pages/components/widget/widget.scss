@@ -1,0 +1,58 @@
+@import "../../../style/vars";
+.widget {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 15px;
+  box-shadow: 2px 4px 10px 1px $dark-font-color;
+  border-radius: 10px;
+  height: auto;
+  background-color: $body-color;
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-weight: bold;
+      font-size: 14px;
+      color: $header-color;
+    }
+
+    .counter {
+      font-size: 28px;
+      font-weight: 300;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .link {
+      width: max-content;
+      font-size: 12px;
+      border-bottom: 1px solid gray;
+      cursor: pointer;
+    }
+
+    .percentage {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: bolder;
+      &.positive {
+        color: $primary-color;
+      }
+      &.negative {
+        color: red;
+      }
+    }
+
+    i {
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 5px;
+      align-self: flex-end;
+    }
+  }
+}

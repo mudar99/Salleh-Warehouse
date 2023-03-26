@@ -1,0 +1,128 @@
+.sidebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-left: 0.5px solid #e6e3e3;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.sidebar .top {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+.sidebar .top .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #01257d;
+  width: 100px;
+  height: auto;
+}
+
+.sidebar hr {
+  height: 0;
+  border: 0.5px solid #e6e3e3;
+}
+
+.sidebar .center {
+  padding-right: 10px;
+}
+
+.sidebar .center ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .center ul .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sidebar .center ul .header:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.sidebar .center ul .header .title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #01257d;
+  margin: 10px;
+}
+
+.sidebar .center ul .visited {
+  background-color: #eee;
+}
+
+.sidebar .center ul li {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.sidebar .center ul li:hover {
+  background-color: #eee;
+}
+
+.sidebar .center ul li i {
+  font-size: 17px;
+  color: #4a8bdf;
+}
+
+.sidebar .center ul li span {
+  font-size: 13px;
+  font-weight: 900;
+  color: #4a8bdf;
+  margin-right: 10px;
+}
+
+.sidebar .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 70px;
+}
+
+.sidebar .bottom .colorOption {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.sidebar .bottom .colorOption:nth-child(1) {
+  border: 1px solid #7451f8;
+  background-color: whitesmoke;
+}
+
+.sidebar .bottom .colorOption:nth-child(2) {
+  background-color: #2e2e2e;
+}
+
+.sidebar .bottom .colorOption:nth-child(3) {
+  background-color: darkblue;
+}
+/*# sourceMappingURL=sidebar.css.map */

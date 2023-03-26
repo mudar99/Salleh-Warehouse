@@ -1,0 +1,258 @@
+@import "vars";
+.app.dark {
+  background-color: #212529;
+  color: rgb(156, 156, 156);
+
+  .register,
+  .login {
+    .navBar {
+      background: $dark-secondary;
+      .list {
+        .item {
+          color: $header-color;
+          &:hover {
+            background-color: $hover-color;
+          }
+        }
+      }
+    }
+    .registerContainer,
+    .loginContainer {
+      background: $dark-secondary;
+      box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+      .title {
+        color: $header-color;
+      }
+      form {
+        input {
+          background-color: $dark-secondary;
+          color: $dark-font-color;
+          border-color: $header-color;
+          &:hover {
+            border-color: $nav-color;
+          }
+          &:focus {
+            box-shadow: 0 7px 30px -10px $dark-box-shadow;
+            border-color: $nav-color;
+          }
+        }
+        .card {
+          background: $dark-secondary;
+          label {
+            color: $primary-color;
+          }
+        }
+        .submit {
+          .p-button {
+            background-color: $primary-color;
+            color: $home-color;
+            &-raised:focus {
+              box-shadow: 0 7px 30px -10px $dark-box-shadow;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .login {
+  //   .navBar {
+  //     background: $dark-secondary;
+  //     .list {
+  //       .item {
+  //         color: $header-color;
+  //         &:hover {
+  //           background-color: $hover-color;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .loginContainer {
+  //     background-color: $dark-secondary;
+  //     box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+  //     .title {
+  //       color: $header-color;
+  //     }
+  //     form {
+  //       input {
+  //         background-color: $dark-secondary;
+  //         color: $dark-font-color;
+  //         border-color: $header-color;
+  //         &:hover {
+  //           border-color: $nav-color;
+  //         }
+  //         &:focus {
+  //           box-shadow: 0 7px 30px -10px $dark-box-shadow;
+  //           border-color: $nav-color;
+  //         }
+  //       }
+  //       .card {
+  //         background: $dark-secondary;
+  //         label {
+  //           color: $primary-color;
+  //         }
+  //       }
+  //       .submit {
+  //         .p-button {
+  //           background-color: $primary-color;
+  //           color: $home-color;
+  //           &-raised:focus {
+  //             box-shadow: 0 7px 30px -10px $dark-box-shadow;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  .home {
+    .homeContainer {
+      background-color: #212529;
+    }
+
+    .listContainer {
+      background-color: $dark-secondary;
+      box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+    }
+  }
+  .chart {
+    box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+    background-color: $dark-secondary;
+    .chartGrid {
+      stroke: rgba(228, 228, 228, 0.219);
+    }
+  }
+
+  .navbar {
+    color: $dark-font-color;
+    border-color: $hover-color;
+    background-color: $dark-secondary;
+    .search {
+      .p-inputtext {
+        border-color: $dark-font-color;
+        &:focus {
+          box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    background-color: $dark-secondary;
+    border-color: $dark-font-color;
+    border-left: 0.5px solid $dark-box-shadow;
+
+    .top {
+      .logo {
+        color: $header-color;
+      }
+    }
+    hr {
+      border-color: $hover-color;
+    }
+
+    ul {
+      .header {
+        &:hover {
+          background-color: $hover-color;
+        }
+        .title {
+          color: $header-color;
+        }
+      }
+
+      .visited {
+        background-color: $hover-color;
+      }
+
+      li {
+        &:hover {
+          background-color: $hover-color;
+        }
+        span {
+          color: $dark-font-color;
+        }
+        i {
+          color: $dark-font-color;
+        }
+      }
+    }
+  }
+
+  .widget {
+    background-color: $dark-secondary;
+    box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+  }
+  .table {
+    .p-datatable-thead > tr > th,
+    .p-datatable-tbody > tr {
+      background-color: $dark-secondary;
+    }
+    .p-datatable-tbody > tr > td,
+    .p-datatable-thead > tr > th {
+      color: $dark-font-color;
+    }
+    .p-column-title {
+      color: $dark-font-color;
+    }
+  }
+
+  .datatable {
+    .header,
+    .p-datatable-header {
+      background: $dark-secondary;
+    }
+    .p-datatable-thead > tr > th,
+    .p-datatable-tbody > tr {
+      background-color: $dark-secondary;
+    }
+    .p-datatable-tbody > tr > td,
+    .p-datatable-thead > tr > th {
+      color: $dark-font-color;
+    }
+    .p-paginator {
+      background-color: $dark-secondary;
+    }
+  }
+
+  .featured {
+    background-color: $dark-secondary;
+    box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+    .bottom {
+      .title {
+        color: $dark-font-color;
+      }
+      .desc {
+        color: $dark-font-color;
+      }
+
+      .summary {
+        .item {
+          .itemTitle {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .single {
+    .singleContainer {
+      .top {
+        .left {
+          .item {
+            .details {
+              .itemTitle {
+                color: $dark-font-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  input {
+    background-color: transparent;
+    color: $dark-secondary;
+  }
+}

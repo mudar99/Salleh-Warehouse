@@ -1,0 +1,107 @@
+.login {
+  height: 100vh;
+}
+
+.login .loginContainer {
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 4px 10px 1px #c9c9c9;
+          box-shadow: 2px 4px 10px 1px #c9c9c9;
+  border-radius: 10px;
+  width: 50%;
+  padding: 30px;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.login .loginContainer .logo {
+  text-align: center;
+}
+
+.login .loginContainer .logo img {
+  height: auto;
+  width: 150px;
+}
+
+.login .loginContainer .title {
+  color: #daa520;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login .loginContainer form {
+  margin-top: 50px;
+}
+
+.login .loginContainer form input {
+  font-size: 18px;
+}
+
+.login .loginContainer form input:hover {
+  border-color: #4a8bdf;
+}
+
+.login .loginContainer form input:focus {
+  -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.login .loginContainer form .card {
+  margin-top: 40px;
+}
+
+.login .loginContainer form .card input {
+  text-align: left;
+  direction: ltr;
+}
+
+.login .loginContainer form .card label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #4a8bdf;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.login .loginContainer form .card label p {
+  margin-right: 10px;
+}
+
+.login .loginContainer form .submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login .loginContainer form .submit .p-button {
+  margin-top: 30px;
+  background-color: #4a8bdf;
+  color: #f1f5f9;
+}
+
+.login .loginContainer form .submit .p-button-raised:focus {
+  -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.login .loginContainer .p-float-label > label {
+  right: 0.75rem;
+  margin-top: -0.5rem;
+}
+
+.login .loginContainer .p-float-label input:focus ~ label,
+.login .loginContainer .p-float-label input.p-filled ~ label {
+  top: -1.2rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .login .loginContainer {
+    width: 80%;
+    padding: 30px;
+    margin-top: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,MAAM,CAAC;EACL,UAAU,EAAE,IAAI;CAOjB;;AARD,AAEE,MAFI,CAEJ,cAAc,CAAC;EACb,KAAK,EAAE,KAAK;CACb;;AAJH,AAKE,MALI,CAKJ,eAAe,CAAC;EACd,KAAK,ECGO,OAAO;CDFpB",
+    "sources": [
+        "table.scss",
+        "../../../style/_vars.scss"
+    ],
+    "names": [],
+    "file": "table.css"
+}

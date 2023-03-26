@@ -1,0 +1,134 @@
+.register {
+  height: 150vh;
+}
+
+.register .registerContainer {
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 4px 10px 1px #c9c9c9;
+          box-shadow: 2px 4px 10px 1px #c9c9c9;
+  border-radius: 10px;
+  width: 50%;
+  padding: 30px;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 5%;
+}
+
+.register .registerContainer .logo {
+  text-align: center;
+}
+
+.register .registerContainer .logo img {
+  height: auto;
+  width: 150px;
+}
+
+.register .registerContainer .title {
+  color: #daa520;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register .registerContainer form {
+  margin-top: 50px;
+}
+
+.register .registerContainer form input {
+  font-size: 18px;
+}
+
+.register .registerContainer form input:hover {
+  border-color: #4a8bdf;
+}
+
+.register .registerContainer form input:focus {
+  -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.register .registerContainer form .fullName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.register .registerContainer form .fullName .fname {
+  margin-left: 10px;
+  width: 50%;
+}
+
+.register .registerContainer form .fullName .lname {
+  margin-right: 10px;
+  width: 50%;
+}
+
+.register .registerContainer form .card {
+  margin-top: 40px;
+}
+
+.register .registerContainer form .card input {
+  text-align: left;
+  direction: ltr;
+}
+
+.register .registerContainer form .card label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #4a8bdf;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.register .registerContainer form .card label p {
+  margin-right: 10px;
+}
+
+.register .registerContainer form .submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register .registerContainer form .submit .p-button {
+  margin-top: 30px;
+  background-color: #4a8bdf;
+  color: #f1f5f9;
+}
+
+.register .registerContainer form .submit .p-button-raised:focus {
+  -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.register .registerContainer .p-float-label > label {
+  right: 0.75rem;
+  margin-top: -0.5rem;
+}
+
+.register .registerContainer .p-float-label input:focus ~ label,
+.register .registerContainer .p-float-label input.p-filled ~ label {
+  top: -1.2rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .register .registerContainer {
+    width: 80%;
+    padding: 30px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .register .registerContainer form .fullName {
+    display: block;
+  }
+  .register .registerContainer form .fullName .fname {
+    width: 100%;
+  }
+  .register .registerContainer form .fullName .lname {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+/*# sourceMappingURL=register.css.map */

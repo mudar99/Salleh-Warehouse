@@ -1,0 +1,33 @@
+@import "./style/vars";
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-family: "Droid Arabic Naskh", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.2s;
+}
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $dark-font-color;
+}
+::selection {
+  color: #eee;
+  background: #86898d;
+}
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: $home-color;
+}
+// #7484A9 #2A2480 #EA6576 #0xFFea6576
