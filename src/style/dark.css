@@ -162,6 +162,35 @@
   color: #c9c9c9;
 }
 
+.app.dark .sidebar .p-confirm-popup {
+  border: solid 1px #2e2e2e;
+  background-color: #212121;
+}
+
+.app.dark .sidebar .p-confirm-popup .p-confirm-popup-icon {
+  color: crimson;
+}
+
+.app.dark .sidebar .p-confirm-popup .p-confirm-popup-message {
+  color: #c9c9c9;
+}
+
+.app.dark .sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-danger {
+  background: crimson;
+}
+
+.app.dark .sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-danger .p-button-label {
+  color: #f1f5f9;
+}
+
+.app.dark .sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-text {
+  background: #2e2e2e;
+}
+
+.app.dark .sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-text .p-button-label {
+  color: #c9c9c9;
+}
+
 .app.dark .widget {
   background-color: #212121;
   -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
@@ -221,6 +250,58 @@
 
 .app.dark .single .singleContainer .top .left .item .details .itemTitle {
   color: #c9c9c9;
+}
+
+.app.dark .p-dialog .p-dialog-header {
+  background-color: #212121;
+  color: #c9c9c9;
+}
+
+.app.dark .p-dialog .p-dialog-content {
+  background-color: #212121;
+  color: #c9c9c9;
+}
+
+.app.dark .p-dialog input {
+  color: #c9c9c9;
+}
+
+.app.dark .p-dialog input:hover {
+  border-color: #4a8bdf;
+}
+
+.app.dark .p-dialog input:focus {
+  -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.app.dark .categories .treetable .p-treetable .parent {
+  background-color: #212529;
+  color: #c9c9c9;
+}
+
+.app.dark .categories .treetable .p-treetable span.p-column-title {
+  color: #c9c9c9;
+}
+
+.app.dark .categories .treetable .p-treetable .p-treetable-thead > tr > th {
+  background-color: #212121;
+  text-align: center;
+}
+
+.app.dark .categories .treetable .p-treetable .p-treetable-tbody > tr > td:not(.parent) {
+  background-color: #212121;
+  color: #c9c9c9;
+  text-align: right;
+}
+
+.app.dark .categories .treetable .p-treetable .p-treetable-tbody > tr.p-highlight,
+.app.dark .categories .treetable .p-treetable .p-treetable-tbody > tr.p-highlight .p-treetable-toggler {
+  color: #c9c9c9;
+}
+
+.app.dark .categories .treetable .p-paginator {
+  background-color: #212121;
 }
 
 .app.dark input {

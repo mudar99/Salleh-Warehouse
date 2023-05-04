@@ -4,20 +4,43 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { dark, light } from "../../../redux/themeSlice";
 import {
-  customers,
+  products,
   dashboard,
   employees,
   towing,
   verfications,
   warehouses,
   workshops,
+  categories,
 } from "../../../redux/visitSlice";
+import { ConfirmPopup, confirmPopup } from "primereact/confirmpopup";
+
+import Cookies from "universal-cookie";
+import { userLogout } from "../../../redux/API/authSlice";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const { place } = useSelector((state) => state.VisitStatus);
   console.log(place);
   localStorage.setItem("place", place);
   const currentPlace = localStorage.getItem("place");
+  const cookie = new Cookies();
+
+  const logoutConfirmation = (event) => {
+    confirmPopup({
+      appendTo: document.querySelector("#log-out"),
+      target: event.currentTarget,
+      message: "هل تود تسجيل الخروج؟",
+      icon: "pi pi-info-circle",
+      acceptLabel: "نعم",
+      rejectLabel: "لا",
+      acceptClassName: "p-button-danger",
+      rejectClassName: "p-button-text",
+      accept: () => {
+        dispatch(userLogout(cookie.get("jwt_store")));
+      },
+    });
+  };
+
   return (
     <div className="sidebar">
       <div className="top ">
@@ -45,29 +68,29 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(dashboard())}
             >
-              <li className={currentPlace === "dashboard" && "visited"}>
+              <li className={currentPlace === "dashboard" ? "visited" : ""}>
                 <i className="fas fa-chart-pie"></i>
                 <span>لوحة التحكم</span>
               </li>
             </Link>
             <Link
-              to="/customers"
+              to="/products"
               style={{ textDecoration: "none" }}
-              onClick={() => dispatch(customers())}
+              onClick={() => dispatch(products())}
             >
-              <li className={currentPlace === "customers" && "visited"}>
+              <li className={currentPlace === "products" ? "visited" : ""}>
                 <i className="fas fa-users"></i>
-                <span>زبائن</span>
+                <span>منتجات</span>
               </li>
             </Link>
             <Link
-              to="/workshops"
+              to="/categories"
               style={{ textDecoration: "none" }}
-              onClick={() => dispatch(workshops())}
+              onClick={() => dispatch(categories())}
             >
-              <li className={currentPlace === "workshops" && "visited"}>
+              <li className={currentPlace === "categories" ? "visited" : ""}>
                 <i className="fas fa-home"></i>
-                <span>ورشات</span>
+                <span>أصناف</span>
               </li>
             </Link>
             <Link
@@ -75,7 +98,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(towing())}
             >
-              <li className={currentPlace === "towing" && "visited"}>
+              <li className={currentPlace === "towing" ? "visited" : ""}>
                 <i className="fas fa-truck-monster"></i>
                 <span>سيارات سحب</span>
               </li>
@@ -86,7 +109,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(warehouses())}
             >
-              <li className={currentPlace === "warehouses" && "visited"}>
+              <li className={currentPlace === "warehouses" ? "visited" : ""}>
                 <i className="fas fa-warehouse"></i>
                 <span>مستودعات</span>
               </li>
@@ -108,7 +131,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(verfications())}
             >
-              <li className={currentPlace === "verifications" && "visited"}>
+              <li className={currentPlace === "verifications" ? "visited" : ""}>
                 <i className="fas fa-home"></i>
                 <span>توثيق ورشات</span>
               </li>
@@ -119,7 +142,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(verfications())}
             >
-              <li className={currentPlace === "verifications" && "visited"}>
+              <li className={currentPlace === "verifications" ? "visited" : ""}>
                 <i className="fas fa-truck-pickup	"></i>
                 <span>توثيق سيارات سحب</span>
               </li>
@@ -130,7 +153,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(verfications())}
             >
-              <li className={currentPlace === "verifications" && "visited"}>
+              <li className={currentPlace === "verifications" ? "visited" : ""}>
                 <i className="fas fa-check-double	"></i>
                 <span>توثيق مستودعات</span>
               </li>
@@ -148,7 +171,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               onClick={() => dispatch(employees())}
             >
-              <li className={currentPlace === "employees" && "visited"}>
+              <li className={currentPlace === "employees" ? "visited" : ""}>
                 <i className="fas fa-user-friends"></i>
                 <span>موظفون</span>
               </li>
@@ -190,9 +213,9 @@ const Sidebar = () => {
               <i className="pi pi-check"></i>
               <span>ملف شخصي</span>
             </li>
-            <li>
+            <li onClick={logoutConfirmation}>
               <i className="fa fa-sign-out-alt"></i>
-              <span>تسجيل خروج</span>
+              <span id="log-out">تسجيل خروج</span>
             </li>
           </div>
         </ul>
@@ -202,6 +225,7 @@ const Sidebar = () => {
         <div className="colorOption" onClick={() => dispatch(light())}></div>
         <div className="colorOption" onClick={() => dispatch(dark())}></div>
       </div>
+      <ConfirmPopup />
     </div>
   );
 };

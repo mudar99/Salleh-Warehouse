@@ -45,4 +45,35 @@ body {
           align-items: center;
   background-color: #f1f5f9;
 }
+
+.p-dialog input {
+  height: 40px;
+  font-size: 18px;
+  text-align: left;
+  direction: ltr;
+}
+
+.p-dialog input:hover {
+  border-color: #4a8bdf;
+}
+
+.p-dialog input:focus {
+  -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+          box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.p-dialog .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
+
+.p-dialog .actions .p-button {
+  direction: ltr;
+}
 /*# sourceMappingURL=style.css.map */

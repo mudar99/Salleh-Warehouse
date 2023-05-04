@@ -125,4 +125,39 @@
 .sidebar .bottom .colorOption:nth-child(3) {
   background-color: darkblue;
 }
+
+.sidebar .p-confirm-popup {
+  background-color: #ffffff;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-message {
+  margin-right: 10px;
+  color: #4a8bdf;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-footer {
+  text-align: center;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-footer .p-button {
+  margin: 5px;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-danger {
+  background: crimson;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-danger .p-button-label {
+  margin: 0;
+  color: #f1f5f9;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-text {
+  background-color: #f1f5f9;
+}
+
+.sidebar .p-confirm-popup .p-confirm-popup-footer .p-button-text .p-button-label {
+  margin: 0;
+  color: #4a8bdf;
+}
 /*# sourceMappingURL=sidebar.css.map */

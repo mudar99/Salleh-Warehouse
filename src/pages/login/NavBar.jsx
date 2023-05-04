@@ -8,7 +8,7 @@ const NavBar = (props) => {
   console.log(props.page);
   return (
     <nav className="navBar">
-      <div class="logo">
+      <div className="logo">
         <img src="/Img/Salleh.png" alt="Salleh" />
       </div>
       <ul className="list">

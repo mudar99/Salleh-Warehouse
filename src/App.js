@@ -1,13 +1,13 @@
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import List from './pages/list/List';
-import New from './pages/new/New';
-import Single from './pages/single/Single';
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import "./style.scss";
 import "./style/dark.scss";
 import { useSelector } from "react-redux";
 import Register from './pages/register/Register';
+import Products from './pages/products/Products';
+import Categories from './pages/categories/Categories';
+import Profile from './pages/profile/Profile';
 
 function App() {
   const { darkMode } = useSelector((state) => state.DarkMode);
@@ -22,9 +22,15 @@ function App() {
             <Route path='register' element={<Register page={"register"} />} />
 
             <Route path='products' >
-              <Route index element={<List />} />
-              <Route path=':productId' element={<Single />} />
-              <Route path='new' element={<New />} />
+              <Route index element={<Products />} />
+            </Route>
+
+            <Route path='categories' >
+              <Route index element={<Categories />} />
+            </Route>
+
+            <Route path='profile' >
+              <Route index element={<Profile />} />
             </Route>
 
             <Route />

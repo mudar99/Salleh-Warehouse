@@ -1,0 +1,39 @@
+@import "../../style/vars";
+.categories {
+  .treetable {
+    margin: 30px;
+    .p-treetable-toggler {
+      margin: 10px;
+    }
+    .p-treetable {
+      direction: rtl;
+      .parent {
+        background-color: #fcfcfc;
+      }
+      span.p-column-title {
+        color: $primary-color;
+      }
+      .p-treetable-thead > tr > th {
+        text-align: center;
+      }
+      .p-treetable-tbody > tr > td {
+        text-align: right;
+      }
+      .p-treetable-tbody > tr.p-highlight,
+      .p-treetable-tbody > tr.p-highlight .p-treetable-toggler {
+        color: $header-color;
+      }
+    }
+    .p-treetable-toggler {
+      left: 12px;
+      transform: rotate(180deg);
+      .pi-chevron-down {
+        transform: rotate(180deg);
+      }
+    }
+
+    .p-paginator {
+      direction: ltr;
+    }
+  }
+}

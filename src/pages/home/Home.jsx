@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Chart from "../components/chart/Chart";
 import Featured from "../components/featured/Featured";
 import Navbar from "../components/navbar/Navbar";
@@ -6,7 +6,19 @@ import Sidebar from "../components/sidebar/Sidebar";
 import Widget from "../components/widget/Widget";
 import Table from "../components/table/Table";
 import "./home.scss";
+import Cookies from "universal-cookie";
+
 const Home = () => {
+  const cookie = new Cookies();
+
+  useEffect(() => {
+    if (cookie.get("jwt_store") === undefined) {
+      window.location.href = "/login";
+    }
+  }, []);
+  if (cookie.get("jwt_store") === undefined) {
+    window.location.href = "/login";
+  } else
   return (
     <div className="home">
       <Sidebar />

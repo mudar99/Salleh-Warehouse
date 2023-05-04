@@ -1,0 +1,84 @@
+.datatable {
+  margin: 30px;
+}
+
+.datatable .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.datatable .header .title {
+  font-weight: 900;
+  padding: 10px;
+  font-size: 20px;
+  color: #daa520;
+}
+
+.datatable .header .p-button {
+  color: #4a8bdf;
+}
+
+.datatable .header .p-button.p-button-text:focus {
+  -webkit-box-shadow: inset 0 -3em 3em #eee;
+          box-shadow: inset 0 -3em 3em #eee;
+}
+
+.datatable .product-image {
+  width: 100px;
+}
+
+.datatable .p-paginator {
+  direction: ltr;
+}
+
+.datatable .p-column-header-content .p-column-title {
+  color: #4a8bdf;
+}
+
+.datatable .p-datatable .p-sortable-column .p-sortable-column-icon {
+  margin-right: 10px;
+  color: #4a8bdf;
+}
+
+.datatable .p-confirm-popup {
+  background-color: #ffffff;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-icon {
+  margin: 10px;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-message {
+  color: #4a8bdf;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-footer {
+  text-align: center;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-footer .p-button {
+  margin: 5px;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-footer .p-button-danger {
+  background: crimson;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-footer .p-button-danger .p-button-label {
+  margin: 0;
+  color: #f1f5f9;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-footer .p-button-text {
+  background-color: #f1f5f9;
+}
+
+.datatable .p-confirm-popup .p-confirm-popup-footer .p-button-text .p-button-label {
+  margin: 0;
+  color: #4a8bdf;
+}
+/*# sourceMappingURL=datatable.css.map */

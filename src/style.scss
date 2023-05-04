@@ -30,4 +30,30 @@ body {
   align-items: center;
   background-color: $home-color;
 }
-// #7484A9 #2A2480 #EA6576 #0xFFea6576
+
+.p-dialog {
+  input {
+    height: 40px;
+    font-size: 18px;
+    text-align: left;
+    direction: ltr;
+    &:hover {
+      border-color: $primary-color;
+    }
+    &:focus {
+      box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    .p-button {
+      direction: ltr;
+    }
+  }
+  .p-fileupload-choose{
+    gap: 10px;
+  }
+}

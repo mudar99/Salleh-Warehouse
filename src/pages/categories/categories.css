@@ -1,0 +1,48 @@
+.categories .treetable {
+  margin: 30px;
+}
+
+.categories .treetable .p-treetable-toggler {
+  margin: 10px;
+}
+
+.categories .treetable .p-treetable {
+  direction: rtl;
+}
+
+.categories .treetable .p-treetable .parent {
+  background-color: #fcfcfc;
+}
+
+.categories .treetable .p-treetable span.p-column-title {
+  color: #4a8bdf;
+}
+
+.categories .treetable .p-treetable .p-treetable-thead > tr > th {
+  text-align: center;
+}
+
+.categories .treetable .p-treetable .p-treetable-tbody > tr > td {
+  text-align: right;
+}
+
+.categories .treetable .p-treetable .p-treetable-tbody > tr.p-highlight,
+.categories .treetable .p-treetable .p-treetable-tbody > tr.p-highlight .p-treetable-toggler {
+  color: #daa520;
+}
+
+.categories .treetable .p-treetable-toggler {
+  left: 12px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.categories .treetable .p-treetable-toggler .pi-chevron-down {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.categories .treetable .p-paginator {
+  direction: ltr;
+}
+/*# sourceMappingURL=categories.css.map */

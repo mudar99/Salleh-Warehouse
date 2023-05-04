@@ -33,7 +33,7 @@
       margin: 0;
       padding: 0;
       .header {
-        &:hover{
+        &:hover {
           background-color: #eee;
           cursor: pointer;
         }
@@ -99,6 +99,35 @@
       }
       &:nth-child(3) {
         background-color: darkblue;
+      }
+    }
+  }
+
+  .p-confirm-popup {
+    background-color: $nav-color;
+    .p-confirm-popup-message {
+      margin-right: 10px;
+      color: $primary-color;
+    }
+    .p-confirm-popup-footer {
+      text-align: center;
+
+      .p-button {
+        margin: 5px;
+      }
+      .p-button-danger {
+        .p-button-label {
+          margin: 0;
+          color: $home-color;
+        }
+        background: crimson;
+      }
+      .p-button-text {
+        background-color: $home-color;
+        .p-button-label {
+          margin: 0;
+          color: $primary-color;
+        }
       }
     }
   }

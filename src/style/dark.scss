@@ -114,6 +114,7 @@
       box-shadow: 2px 4px 10px 1px $dark-box-shadow;
     }
   }
+
   .chart {
     box-shadow: 2px 4px 10px 1px $dark-box-shadow;
     background-color: $dark-secondary;
@@ -176,12 +177,38 @@
         }
       }
     }
+
+    .p-confirm-popup {
+      border: solid 1px $hover-color;
+      .p-confirm-popup-icon {
+        color: crimson;
+      }
+      background-color: $dark-secondary;
+      .p-confirm-popup-message {
+        color: $dark-font-color;
+      }
+      .p-confirm-popup-footer {
+        .p-button-danger {
+          .p-button-label {
+            color: $home-color;
+          }
+          background: crimson;
+        }
+        .p-button-text {
+          background: $dark-box-shadow;
+          .p-button-label {
+            color: $dark-font-color;
+          }
+        }
+      }
+    }
   }
 
   .widget {
     background-color: $dark-secondary;
     box-shadow: 2px 4px 10px 1px $dark-box-shadow;
   }
+
   .table {
     .p-datatable-thead > tr > th,
     .p-datatable-tbody > tr {
@@ -247,6 +274,76 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .p-dialog {
+    .p-dialog-header {
+      background-color: $dark-secondary;
+      color: $dark-font-color;
+    }
+    .p-dialog-content {
+      background-color: $dark-secondary;
+      color: $dark-font-color;
+    }
+    input {
+      color: $dark-font-color;
+      &:hover {
+        border-color: $primary-color;
+      }
+      &:focus {
+        box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+      }
+    }
+  }
+
+  .categories {
+    .treetable {
+      .p-treetable {
+        .parent {
+          background-color: #212529;
+          color: $dark-font-color;
+        }
+        span.p-column-title {
+          color: $dark-font-color;
+        }
+        .p-treetable-thead > tr > th {
+          background-color: $dark-secondary;
+          text-align: center;
+        }
+        .p-treetable-tbody > tr > td:not(.parent) {
+          background-color: $dark-secondary;
+          color: $dark-font-color;
+          text-align: right;
+        }
+
+        .p-treetable-tbody > tr.p-highlight,
+        .p-treetable-tbody > tr.p-highlight .p-treetable-toggler {
+          color: $dark-font-color;
+        }
+      }
+      .p-paginator {
+        background-color: $dark-secondary;
+      }
+    }
+  }
+
+  .profileContent {
+    .profile-card {
+      box-shadow: 0px 8px 60px -10px $dark-box-shadow;
+      background: $dark-secondary;
+
+      &__name {
+        color: $primary-color;
+      }
+
+      &__txt {
+        color: $dark-font-color;
+      }
+
+      &-loc {
+        color: $header-color;
       }
     }
   }

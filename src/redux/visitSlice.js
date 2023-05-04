@@ -9,10 +9,10 @@ export const visitSlice = createSlice({
     reducers: {
         dashboard: (state) => {
             state.place = 'dashboard'
-        }, customers: (state) => {
-            state.place = 'customers'
-        }, workshops: (state) => {
-            state.place = 'workshops'
+        }, products: (state) => {
+            state.place = 'products'
+        }, categories: (state) => {
+            state.place = 'categories'
         }, towing: (state) => {
             state.place = 'towing'
         }, warehouses: (state) => {
@@ -25,6 +25,6 @@ export const visitSlice = createSlice({
     },
 })
 
-export const { dashboard, customers, employees, towing, verfications, warehouses, workshops } = visitSlice.actions
+export const { dashboard, products, employees, towing, verfications, warehouses, categories } = visitSlice.actions
 
 export default visitSlice.reducer
