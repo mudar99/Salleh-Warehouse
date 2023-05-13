@@ -6,17 +6,14 @@ import { dark, light } from "../../../redux/themeSlice";
 import {
   products,
   dashboard,
-  employees,
-  towing,
-  verfications,
-  warehouses,
-  workshops,
   categories,
+  profile,
 } from "../../../redux/visitSlice";
 import { ConfirmPopup, confirmPopup } from "primereact/confirmpopup";
 
 import Cookies from "universal-cookie";
 import { userLogout } from "../../../redux/API/authSlice";
+import { opened } from "../../../redux/settingSlice";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const { place } = useSelector((state) => state.VisitStatus);
@@ -93,71 +90,6 @@ const Sidebar = () => {
                 <span>أصناف</span>
               </li>
             </Link>
-            <Link
-              to="/towingcars"
-              style={{ textDecoration: "none" }}
-              onClick={() => dispatch(towing())}
-            >
-              <li className={currentPlace === "towing" ? "visited" : ""}>
-                <i className="fas fa-truck-monster"></i>
-                <span>سيارات سحب</span>
-              </li>
-            </Link>
-
-            <Link
-              to="/warehouses"
-              style={{ textDecoration: "none" }}
-              onClick={() => dispatch(warehouses())}
-            >
-              <li className={currentPlace === "warehouses" ? "visited" : ""}>
-                <i className="fas fa-warehouse"></i>
-                <span>مستودعات</span>
-              </li>
-            </Link>
-          </div>
-
-          <div
-            className="header"
-            data-bs-toggle="collapse"
-            href="#verifications"
-          >
-            <p className="title">طلبات التحقق</p>
-            <li className="fas fa-caret-down"></li>
-          </div>
-
-          <div className="collapse show" id="verifications">
-            <Link
-              to="/"
-              style={{ textDecoration: "none" }}
-              onClick={() => dispatch(verfications())}
-            >
-              <li className={currentPlace === "verifications" ? "visited" : ""}>
-                <i className="fas fa-home"></i>
-                <span>توثيق ورشات</span>
-              </li>
-            </Link>
-
-            <Link
-              to="/"
-              style={{ textDecoration: "none" }}
-              onClick={() => dispatch(verfications())}
-            >
-              <li className={currentPlace === "verifications" ? "visited" : ""}>
-                <i className="fas fa-truck-pickup	"></i>
-                <span>توثيق سيارات سحب</span>
-              </li>
-            </Link>
-
-            <Link
-              to="/"
-              style={{ textDecoration: "none" }}
-              onClick={() => dispatch(verfications())}
-            >
-              <li className={currentPlace === "verifications" ? "visited" : ""}>
-                <i className="fas fa-check-double	"></i>
-                <span>توثيق مستودعات</span>
-              </li>
-            </Link>
           </div>
 
           <div className="header" data-bs-toggle="collapse" href="#usage">
@@ -166,17 +98,6 @@ const Sidebar = () => {
           </div>
 
           <div className="collapse show" id="usage">
-            <Link
-              to="/employees"
-              style={{ textDecoration: "none" }}
-              onClick={() => dispatch(employees())}
-            >
-              <li className={currentPlace === "employees" ? "visited" : ""}>
-                <i className="fas fa-user-friends"></i>
-                <span>موظفون</span>
-              </li>
-            </Link>
-
             <li>
               <i className="fas fa-bell"></i>
               <span>إشعارات</span>
@@ -197,7 +118,7 @@ const Sidebar = () => {
               <i className="fas fa-history"></i>
               <span>سجلات النظام</span>
             </li>
-            <li>
+            <li onClick={() => dispatch(opened())}>
               <i className="fas fa-cogs"></i>
               <span>إعدادات</span>
             </li>
@@ -209,10 +130,16 @@ const Sidebar = () => {
           </div>
 
           <div className="collapse show" id="user">
-            <li>
-              <i className="pi pi-check"></i>
-              <span>ملف شخصي</span>
-            </li>
+            <Link
+              to="/profile"
+              style={{ textDecoration: "none" }}
+              onClick={() => dispatch(profile())}
+            >
+              <li>
+                <i className="pi pi-check"></i>
+                <span>ملف شخصي</span>
+              </li>
+            </Link>
             <li onClick={logoutConfirmation}>
               <i className="fa fa-sign-out-alt"></i>
               <span id="log-out">تسجيل خروج</span>

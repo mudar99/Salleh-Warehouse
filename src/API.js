@@ -9,3 +9,7 @@ export const UpdateProductAPI = `${local}/api/store/product/`;
 export const CreateProductAPI = `${local}/api/store/product/create/`;
 
 export const GetCategoriesAPI = `${local}/api/store/category/get/`;
+export const SendAuthFilesAPI = `${local}/api/store/file/send`;
+
+export const SendVerCodeAPI = `${local}/api/store/mail`;
+export const VerificationAPI = `${local}/api/store/mail/verify`;

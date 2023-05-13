@@ -5,7 +5,8 @@ import Sidebar from "../components/sidebar/Sidebar";
 import ProductsDataTable from "../products/ProductsDataTable";
 import CategorisView from "../categories/CategorisView";
 import ProfileContent from "../profile/ProfileContent";
-
+import Settings from "../settings/Settings";
+ 
 const List = (props) => {
   const visibleCallBack = (e, rowData) => {
     // switch (e) {
@@ -40,6 +41,7 @@ const List = (props) => {
       <Sidebar />
       <div className="listContainer">
         <Navbar />
+        <Settings />
         {switchComponent()}
       </div>
     </div>

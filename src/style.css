@@ -76,4 +76,8 @@ body {
 .p-dialog .actions .p-button {
   direction: ltr;
 }
+
+.p-dialog .p-fileupload-choose {
+  gap: 10px;
+}
 /*# sourceMappingURL=style.css.map */

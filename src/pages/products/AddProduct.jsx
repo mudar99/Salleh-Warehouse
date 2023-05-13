@@ -30,18 +30,18 @@ export const AddProduct = (props) => {
     obj.append("product_photo", prodPhoto);
     let data = { id: props.data.key, obj };
     console.log(prodQuantity)
-    // dispatch(CreateProduct(data)).then((res) => {
-    //   console.log(res);
-    //   if (res.payload.status === true) {
-    //     showSuccess(res.payload.message, toast);
-    //     setTimeout(() => {
-    //       props.visibleState(false);
-    //       dispatch(GetProducts());
-    //     }, 1000);
-    //     return;
-    //   }
-    //   showError(res.payload, toast);
-    // });
+    dispatch(CreateProduct(data)).then((res) => {
+      console.log(res);
+      if (res.payload.status === true) {
+        showSuccess(res.payload.message, toast);
+        setTimeout(() => {
+          props.visibleState(false);
+          // dispatch(GetProducts());
+        }, 1000);
+        return;
+      }
+      showError(res.payload, toast);
+    });
   };
   const toast = useRef(null);
   return (

@@ -13,18 +13,12 @@ export const visitSlice = createSlice({
             state.place = 'products'
         }, categories: (state) => {
             state.place = 'categories'
-        }, towing: (state) => {
-            state.place = 'towing'
-        }, warehouses: (state) => {
-            state.place = 'warehouses'
-        }, verfications: (state) => {
-            state.place = 'verfications'
-        }, employees: (state) => {
-            state.place = 'employees'
+        }, profile: (state) => {
+            state.place = 'profile'
         },
     },
 })
 
-export const { dashboard, products, employees, towing, verfications, warehouses, categories } = visitSlice.actions
+export const { dashboard, products, profile, categories } = visitSlice.actions
 
 export default visitSlice.reducer

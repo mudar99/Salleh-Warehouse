@@ -281,7 +281,7 @@
 }
 
 .app.dark .categories .treetable .p-treetable span.p-column-title {
-  color: #c9c9c9;
+  color: #4a8bdf;
 }
 
 .app.dark .categories .treetable .p-treetable .p-treetable-thead > tr > th {
@@ -302,6 +302,24 @@
 
 .app.dark .categories .treetable .p-paginator {
   background-color: #212121;
+}
+
+.app.dark .profileContent .profile-card {
+  -webkit-box-shadow: 0px 8px 60px -10px #2e2e2e;
+          box-shadow: 0px 8px 60px -10px #2e2e2e;
+  background: #212121;
+}
+
+.app.dark .profileContent .profile-card__name {
+  color: #4a8bdf;
+}
+
+.app.dark .profileContent .profile-card__txt {
+  color: #c9c9c9;
+}
+
+.app.dark .profileContent .profile-card-loc {
+  color: #daa520;
 }
 
 .app.dark input {

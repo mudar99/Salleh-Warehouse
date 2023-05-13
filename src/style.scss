@@ -32,6 +32,8 @@ body {
 }
 
 .p-dialog {
+  min-width: max-content;
+  min-height: max-content;
   input {
     height: 40px;
     font-size: 18px;
@@ -53,7 +55,7 @@ body {
       direction: ltr;
     }
   }
-  .p-fileupload-choose{
+  .p-fileupload-choose {
     gap: 10px;
   }
 }

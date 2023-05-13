@@ -1,0 +1,13 @@
+@import "./../../../style/vars";
+.sendFiles {
+  .header {
+    text-align: right;
+    font-weight: 900;
+    font-size: 15px;
+    color: $primary-color;
+    margin: 0 10px 10px 0;
+  }
+  .filepond--credits {
+    display: none;
+  }
+}
