@@ -11,4 +11,107 @@
       -ms-flex: 6;
           flex: 6;
 }
+
+.list .listContainer .p-sidebar-left {
+  direction: ltr;
+}
+
+.list .listContainer .p-sidebar-left .p-sidebar-content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.list .listContainer .p-sidebar-left .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+}
+
+.list .listContainer .p-sidebar-left .header div {
+  font-weight: 900;
+  font-size: 25px;
+  color: #daa520;
+}
+
+.list .listContainer .p-sidebar-left .header i {
+  padding-top: 4px;
+  margin-left: 8px;
+  font-weight: 900;
+  font-size: 25px;
+  color: #daa520;
+}
+
+.list .listContainer .p-sidebar-left .title {
+  text-align: center;
+  color: #daa520;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #daa520;
+}
+
+.list .listContainer .p-sidebar-left .list {
+  display: inline;
+  list-style: none;
+}
+
+.list .listContainer .p-sidebar-left .list .item {
+  margin-top: 15px;
+  color: #4a8bdf;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  word-wrap: break-word;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);
+  background-color: #fff;
+}
+
+.list .listContainer .p-sidebar-left .list .item h6 {
+  font-size: 16px;
+}
+
+.list .listContainer .p-sidebar-left .list .item i {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.list .listContainer .p-sidebar-left .list .item:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.list .listContainer .p-sidebar-left .list .item:hover i {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.list .listContainer .p-sidebar-left .list .item:hover h6 {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.list .listContainer .p-sidebar-left .list .item i {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.list .listContainer .p-sidebar-left .list .item h6 {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
 /*# sourceMappingURL=list.css.map */

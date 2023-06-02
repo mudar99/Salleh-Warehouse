@@ -13,7 +13,7 @@ const Navbar = (props) => {
     <div className="navbar">
       <div className="wrapper">
         <div className="items">
-          <div className="item">
+          <div className="item mb-2">
             <Link to="/profile">
               <img
                 src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -23,24 +23,24 @@ const Navbar = (props) => {
             </Link>
           </div>
           <div className="item" onClick={() => dispatch(opened())}>
-            <i className="fas fa-cogs"></i>
+          <i className="bi bi-gear-fill"></i>
           </div>
           <div className="item">
-            <i className="far fa-bell"></i>
+          <i className="bi bi-bell-fill"></i>
             <div className="counter">2</div>
           </div>
           <div className="item">
-            <i className="far fa-paper-plane"></i>
+          <i className="bi bi-envelope-fill"></i>
             <div className="counter">1</div>
           </div>
           <div className="item">
-            <i className="pi pi-moon" onClick={() => dispatch(toggle())}></i>
+            <i className="bi bi-moon-fill" onClick={() => dispatch(toggle())}></i>
           </div>
           <div className="item">
-            <i className="pi pi-folder"></i>
+          <i className="bi bi-folder-fill"></i>
           </div>
           <div className="item">
-            <i className="pi pi-globe m-1"></i>
+          <i className="bi bi-globe"></i>
           </div>
         </div>
 

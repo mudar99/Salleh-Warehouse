@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sendAuthFiles } from "../../../redux/API/settings/sendfilesSlice";
 import { showError, showSuccess } from "../../../ToastService";
 import { Toast } from "primereact/toast";
+import MapTest from "../maps/MapTest";
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 const SendFiles = (props) => {
@@ -23,6 +24,7 @@ const SendFiles = (props) => {
   const dispatch = useDispatch();
   const [ids, setIds] = useState([]);
   const [stores, setStores] = useState([]);
+  const [newPosition, setNewPosition] = useState();
   const assignIds = (fileItems) => {
     setIds(fileItems.map((fileItem) => fileItem.file));
   };
@@ -38,8 +40,8 @@ const SendFiles = (props) => {
     stores.forEach((store, index) => {
       info.append(`storehouse_photo[${index}]`, store);
     });
-    info.append("latitude", 40.132);
-    info.append("longitude", 41.2563);
+    info.append("latitude", newPosition.lat);
+    info.append("longitude", newPosition.lng);
     dispatch(sendAuthFiles(info)).then((res) => {
       console.log(res);
       if (res.payload.status === true) {
@@ -84,6 +86,7 @@ const SendFiles = (props) => {
           onupdatefiles={assignStores}
         />
 
+        <MapTest setLatLng={(e) => setNewPosition(e)} />
         <span className="actions">
           <Button
             label="إضافة"

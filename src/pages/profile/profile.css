@@ -1,4 +1,4 @@
-.profileContent .wrapper {
+.profile .profileContent .wrapper {
   width: 100%;
   width: 100%;
   height: auto;
@@ -10,7 +10,7 @@
   display: flex;
 }
 
-.profileContent .profile-card {
+.profile .profileContent .profile-card {
   width: 100%;
   min-height: 460px;
   margin: auto;
@@ -22,14 +22,14 @@
   position: relative;
 }
 
-.profileContent .profile-card__img {
+.profile .profileContent .profile-card__img {
   width: auto;
   height: 340px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.profileContent .profile-card__img img {
+.profile .profileContent .profile-card__img img {
   display: block;
   width: 100%;
   height: 100%;
@@ -39,7 +39,7 @@
   border-top-right-radius: 12px;
 }
 
-.profileContent .profile-card__cnt {
+.profile .profileContent .profile-card__cnt {
   margin-top: 35px;
   text-align: center;
   padding: 0 20px;
@@ -48,25 +48,25 @@
   transition: all 0.3s;
 }
 
-.profileContent .profile-card__name {
+.profile .profileContent .profile-card__name {
   font-weight: 700;
   font-size: 24px;
   color: #4a8bdf;
   margin-bottom: 15px;
 }
 
-.profileContent .profile-card__txt {
+.profile .profileContent .profile-card__txt {
   font-size: 18px;
   font-weight: 500;
   color: #324e63;
   margin-bottom: 15px;
 }
 
-.profileContent .profile-card__txt strong {
+.profile .profileContent .profile-card__txt strong {
   font-weight: 700;
 }
 
-.profileContent .profile-card-loc {
+.profile .profileContent .profile-card-loc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,7 +81,7 @@
   color: #daa520;
 }
 
-.profileContent .profile-card-loc__icon {
+.profile .profileContent .profile-card-loc__icon {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;

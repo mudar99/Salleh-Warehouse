@@ -25,7 +25,7 @@ const ProfileContent = () => {
             <div className="profile-card-loc">
               <span className="profile-card-loc__txt">Damascus, Syria</span>
               <span className="profile-card-loc__icon">
-                <i className="fas fa-map-marker-alt"></i>
+                <i class="bi bi-geo-alt"></i>
               </span>
             </div>
           </div>

@@ -89,14 +89,36 @@
           box-shadow: 0 7px 30px -10px #2e2e2e;
 }
 
-.app.dark .home .homeContainer {
+.app.dark .homeContainer {
   background-color: #212529;
 }
 
-.app.dark .home .listContainer {
+.app.dark .list .listContainer .p-sidebar-left .p-sidebar-content {
   background-color: #212121;
-  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
-          box-shadow: 2px 4px 10px 1px #2e2e2e;
+}
+
+.app.dark .list .listContainer .p-sidebar-left .header div {
+  color: #daa520;
+}
+
+.app.dark .list .listContainer .p-sidebar-left .header i {
+  color: #daa520;
+}
+
+.app.dark .list .listContainer .p-sidebar-left .title {
+  color: #daa520;
+  border-bottom: 1px solid #daa520;
+}
+
+.app.dark .list .listContainer .p-sidebar-left .list .item {
+  color: #c9c9c9;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.195);
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.195);
+  background-color: #212121;
+}
+
+.app.dark .list .listContainer .p-sidebar-left .list .item:hover {
+  background-color: #2e2e2e;
 }
 
 .app.dark .chart {

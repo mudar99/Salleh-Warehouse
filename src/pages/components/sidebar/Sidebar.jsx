@@ -14,6 +14,7 @@ import { ConfirmPopup, confirmPopup } from "primereact/confirmpopup";
 import Cookies from "universal-cookie";
 import { userLogout } from "../../../redux/API/authSlice";
 import { opened } from "../../../redux/settingSlice";
+
 const Sidebar = () => {
   const dispatch = useDispatch();
   const { place } = useSelector((state) => state.VisitStatus);
@@ -56,7 +57,7 @@ const Sidebar = () => {
             href="#mainServices"
           >
             <p className="title">رئيسي</p>
-            <li className="fas fa-caret-down"></li>
+            <li className="bi bi-caret-down-fill"></li>
           </div>
 
           <div className="collapse show" id="mainServices">
@@ -66,7 +67,7 @@ const Sidebar = () => {
               onClick={() => dispatch(dashboard())}
             >
               <li className={currentPlace === "dashboard" ? "visited" : ""}>
-                <i className="fas fa-chart-pie"></i>
+                <i className="bi bi-pie-chart-fill"></i>
                 <span>لوحة التحكم</span>
               </li>
             </Link>
@@ -76,7 +77,7 @@ const Sidebar = () => {
               onClick={() => dispatch(products())}
             >
               <li className={currentPlace === "products" ? "visited" : ""}>
-                <i className="fas fa-users"></i>
+                <i className="bi bi-people-fill"></i>
                 <span>منتجات</span>
               </li>
             </Link>
@@ -86,7 +87,7 @@ const Sidebar = () => {
               onClick={() => dispatch(categories())}
             >
               <li className={currentPlace === "categories" ? "visited" : ""}>
-                <i className="fas fa-home"></i>
+                <i className="bi bi-house-fill"></i>
                 <span>أصناف</span>
               </li>
             </Link>
@@ -94,39 +95,39 @@ const Sidebar = () => {
 
           <div className="header" data-bs-toggle="collapse" href="#usage">
             <p className="title">استخدام</p>
-            <li className="fas fa-caret-down"></li>
+            <li className="bi bi-caret-down-fill"></li>
           </div>
 
           <div className="collapse show" id="usage">
             <li>
-              <i className="fas fa-bell"></i>
+              <i className="bi bi-bell-fill"></i>
               <span>إشعارات</span>
             </li>
           </div>
 
           <div className="header" data-bs-toggle="collapse" href="#services">
             <p className="title">خدمات</p>
-            <li className="fas fa-caret-down"></li>
+            <li className="bi bi-caret-down-fill"></li>
           </div>
 
           <div className="collapse show" id="services">
             <li>
-              <i className="fas fa-exclamation-circle	"></i>
+              <i className="bi bi-exclamation-circle-fill"></i>
               <span>شكاوى</span>
             </li>
             <li>
-              <i className="fas fa-history"></i>
+              <i className="bi bi-clock-history"></i>
               <span>سجلات النظام</span>
             </li>
             <li onClick={() => dispatch(opened())}>
-              <i className="fas fa-cogs"></i>
+              <i className="bi bi-gear-fill"></i>
               <span>إعدادات</span>
             </li>
           </div>
 
           <div className="header" data-bs-toggle="collapse" href="#user">
             <p className="title">مستخدم</p>
-            <li className="fas fa-caret-down"></li>
+            <li className="bi bi-caret-down-fill"></li>
           </div>
 
           <div className="collapse show" id="user">
@@ -136,12 +137,12 @@ const Sidebar = () => {
               onClick={() => dispatch(profile())}
             >
               <li>
-                <i className="pi pi-check"></i>
+                <i class="bi bi-person-fill"></i>
                 <span>ملف شخصي</span>
               </li>
             </Link>
             <li onClick={logoutConfirmation}>
-              <i className="fa fa-sign-out-alt"></i>
+            <i class="bi bi-box-arrow-right"></i>
               <span id="log-out">تسجيل خروج</span>
             </li>
           </div>

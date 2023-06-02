@@ -1,0 +1,12 @@
+.sendFiles .header {
+  text-align: right;
+  font-weight: 900;
+  font-size: 15px;
+  color: #4a8bdf;
+  margin: 0 10px 10px 0;
+}
+
+.sendFiles .filepond--credits {
+  display: none;
+}
+/*# sourceMappingURL=sendfiles.css.map */

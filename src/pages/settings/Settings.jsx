@@ -26,13 +26,13 @@ const Settings = () => {
       >
         <div className="header">
           <div>الإعدادات</div>
-          <i className="fas fa-cog"></i>
+          <i className="bi bi-gear-fill"></i>
         </div>
         <div className="title">يمكنك التحكم بإعدادات الحساب من هنا</div>
         <ul className="list">
           <li className="item">
-            <h6>تغيير كلمة المرور</h6>
-            <i className="fas fa-lock"></i>
+            <h6 className="mt-1">تغيير كلمة المرور</h6>
+            <i className="bi bi-lock-fill"></i>
           </li>
           <li
             className="item"
@@ -40,8 +40,8 @@ const Settings = () => {
               setAccoutVer(true);
             }}
           >
-            <h6>توثيق الحساب</h6>
-            <i className="fas fa-check"></i>
+            <h6 className="mt-1">توثيق الحساب</h6>
+            <i className="bi bi-check-circle-fill"></i>
           </li>
           <li
             className="item"
@@ -49,21 +49,22 @@ const Settings = () => {
               setMailVer(true);
             }}
           >
-            <h6>تأكيد البريد الإلكتروني</h6>
-            <i className="fas fa-at"></i>
+            <h6 className="mt-1">تأكيد البريد الإلكتروني</h6>
+            <i class="bi bi-envelope-check-fill"></i>
           </li>
           <li className="item">
-            <h6>المحفظة</h6>
-            <i className="fas fa-wallet"></i>
+            <h6 className="mt-1">المحفظة</h6>
+            <i className="bi bi-wallet-fill"></i>
           </li>
           <li className="item">
-            <h6>تعديل الملف الشخصي</h6>
-            <i className="fas fa-user"></i>
+            <h6 className="mt-1">تعديل الملف الشخصي</h6>
+            <i className="bi bi-person-fill"></i>
           </li>
         </ul>
       </Sidebar>
 
       <Dialog
+        maximizable
         header="إرسال مرفقات توثيق الحساب"
         visible={accoutVer}
         style={{ width: "50vw" }}

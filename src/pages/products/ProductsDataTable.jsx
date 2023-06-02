@@ -34,19 +34,6 @@ const ProductsDataTable = (props) => {
     "صورة المنتج",
     "حدث",
   ];
-  const header = (
-    <div className="header">
-      <span className="title">منجات</span>
-      <Button
-        icon="pi pi-plus"
-        onClick={() => props.createState("C")}
-        rounded
-        text
-        raised
-        aria-label="Favorite"
-      />
-    </div>
-  );
   const acitonBodyTemplate = (rowData) => {
     return (
       <>
@@ -103,7 +90,6 @@ const ProductsDataTable = (props) => {
       {loading && <LoadingFS />}
       <div className="card">
         <DataTable
-          header={header}
           value={data}
           tableStyle={{ minWidth: "50rem" }}
         >

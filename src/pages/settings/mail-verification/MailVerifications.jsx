@@ -1,12 +1,17 @@
 import { Button } from "primereact/button";
 import React, { useReducer, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checkVerificationCode, sendVerificationCode } from "../../../redux/API/settings/mailVerSlice";
+import {
+  checkVerificationCode,
+  sendVerificationCode,
+} from "../../../redux/API/settings/mailVerSlice";
 import { showError, showSuccess } from "../../../ToastService";
 import { InputText } from "primereact/inputtext";
+import { Toast } from "primereact/toast";
 
 const MailVerifications = (props) => {
   const [code, setCode] = useState();
+  const [correctCode, setCorrectCode] = useState();
   const dispatch = useDispatch();
   const toast = useRef();
   const { btnLoading, isDone } = useSelector((state) => state.mailVer);
@@ -15,6 +20,7 @@ const MailVerifications = (props) => {
     dispatch(sendVerificationCode()).then((res) => {
       console.log(res);
       if (res.payload.status === true) {
+        setCorrectCode(res.payload.data.code);
         showSuccess(res.payload.message, toast);
         return;
       }
@@ -23,7 +29,10 @@ const MailVerifications = (props) => {
   };
   const codeVerification = (e) => {
     e.preventDefault();
-    dispatch(checkVerificationCode()).then((res) => {
+    let info = new FormData();
+    info.append("code", code);
+    info.append("correctCode", correctCode);
+    dispatch(checkVerificationCode(info)).then((res) => {
       console.log(res);
       if (res.payload.status === true) {
         showSuccess(res.payload.message, toast);
@@ -34,6 +43,7 @@ const MailVerifications = (props) => {
   };
   return (
     <>
+      <Toast ref={toast} />
       {!isDone && (
         <form onSubmit={mailConfirmation}>
           <div className="header">
@@ -76,7 +86,7 @@ const MailVerifications = (props) => {
 
           <span className="actions mt-5">
             <Button
-              label="إرسال"
+              label="التحقق"
               icon="pi pi-check"
               type="submit"
               raised

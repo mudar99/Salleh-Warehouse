@@ -46,6 +46,15 @@ body {
   background-color: #f1f5f9;
 }
 
+.p-dialog {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+}
+
 .p-dialog input {
   height: 40px;
   font-size: 18px;
@@ -79,5 +88,15 @@ body {
 
 .p-dialog .p-fileupload-choose {
   gap: 10px;
+}
+
+.p-dialog-maximized .leaflet-container {
+  width: 90vw;
+  height: 40vw;
+}
+
+.leaflet-container {
+  width: 80vw;
+  height: 40vw;
 }
 /*# sourceMappingURL=style.css.map */
