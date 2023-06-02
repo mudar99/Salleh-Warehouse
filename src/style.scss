@@ -59,3 +59,14 @@ body {
     gap: 10px;
   }
 }
+.p-dialog-maximized {
+  .leaflet-container {
+    width: 90vw;
+    height: 40vw;
+  }
+}
+
+.leaflet-container {
+  width: 80vw;
+  height: 40vw;
+}
