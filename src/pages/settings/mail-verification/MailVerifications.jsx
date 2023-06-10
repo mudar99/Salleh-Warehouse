@@ -53,6 +53,7 @@ const MailVerifications = (props) => {
 
           <span className="actions mt-5">
             <Button
+              loadingIcon="pi pi-spin pi-spinner"
               label="إرسال"
               icon="pi pi-check"
               type="submit"
@@ -86,6 +87,7 @@ const MailVerifications = (props) => {
 
           <span className="actions mt-5">
             <Button
+              loadingIcon="pi pi-spin pi-spinner"
               label="التحقق"
               icon="pi pi-check"
               type="submit"

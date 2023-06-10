@@ -129,6 +129,7 @@ export const AddProduct = (props) => {
           icon="pi pi-check"
           type="submit"
           raised
+          loadingIcon="pi pi-spin pi-spinner"
           loading={btnLoading}
         />
         <Button

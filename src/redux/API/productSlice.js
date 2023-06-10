@@ -13,7 +13,7 @@ export const GetProducts = createAsyncThunk("storehouse/products/get", async (in
     console.log(data)
     return data;
 });
-export const CreateProduct = createAsyncThunk("admin/products/create", async (info, { rejectWithValue }) => {
+export const CreateProduct = createAsyncThunk("storehouse/products/create", async (info, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
@@ -25,7 +25,7 @@ export const CreateProduct = createAsyncThunk("admin/products/create", async (in
         return rejectWithValue(error.response.data.message);
     }
 });
-export const UpdateProduct = createAsyncThunk("admin/products/update", async (info, { rejectWithValue }) => {
+export const UpdateProduct = createAsyncThunk("storehouse/products/update", async (info, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
@@ -37,7 +37,7 @@ export const UpdateProduct = createAsyncThunk("admin/products/update", async (in
         return rejectWithValue(error.response.data.message);
     }
 });
-export const DeleteProduct = createAsyncThunk("admin/gategories/delete", async (id, { rejectWithValue }) => {
+export const DeleteProduct = createAsyncThunk("storehouse/gategories/delete", async (id, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }

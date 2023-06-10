@@ -131,7 +131,7 @@
           .item {
             color: $dark-font-color;
             &:hover {
-              background-color: $hover-color
+              background-color: $hover-color;
             }
             box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.195);
             background-color: $dark-secondary;
@@ -266,9 +266,6 @@
     .p-datatable-thead > tr > th {
       color: $dark-font-color;
     }
-    .p-paginator {
-      background-color: $dark-secondary;
-    }
   }
 
   .featured {
@@ -353,9 +350,6 @@
           color: $dark-font-color;
         }
       }
-      .p-paginator {
-        background-color: $dark-secondary;
-      }
     }
   }
 
@@ -378,6 +372,53 @@
     }
   }
 
+  .suggestions-datatable,
+  .complaints-datatable {
+    .suggestions,.complaints {
+      .suggestion,.complaint {
+        box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+        background-color: $dark-secondary;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 4px 6px 12px 2px $dark-box-shadow;
+        }
+
+        .title {
+          color: $header-color;
+        }
+
+        .description {
+          color: $dark-font-color;
+        }
+        .arabic {
+          text-align: right;
+        }
+        .english {
+          text-align: left;
+        }
+      }
+    }
+    .action {
+      .add-suggestion,.add-complaint {
+        box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+        background-color: $dark-secondary;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 4px 6px 12px 2px$dark-box-shadow;
+        }
+      }
+    }
+  }
+
+  .p-paginator {
+    background-color: $dark-secondary;
+  }
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: $dark-box-shadow;
+    color: $dark-font-color;
+  }
   input {
     background-color: transparent;
     color: $dark-secondary;

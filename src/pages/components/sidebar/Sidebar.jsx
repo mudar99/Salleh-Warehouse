@@ -8,6 +8,9 @@ import {
   dashboard,
   categories,
   profile,
+  purchases,
+  suggestions,
+  complaints,
 } from "../../../redux/visitSlice";
 import { ConfirmPopup, confirmPopup } from "primereact/confirmpopup";
 
@@ -91,6 +94,16 @@ const Sidebar = () => {
                 <span>أصناف</span>
               </li>
             </Link>
+            <Link
+              to="/purchases"
+              style={{ textDecoration: "none" }}
+              onClick={() => dispatch(purchases())}
+            >
+              <li className={currentPlace === "purchases" ? "visited" : ""}>
+                <i className="bi bi-bag-fill"></i>
+                <span>طلبات الشراء</span>
+              </li>
+            </Link>
           </div>
 
           <div className="header" data-bs-toggle="collapse" href="#usage">
@@ -111,10 +124,26 @@ const Sidebar = () => {
           </div>
 
           <div className="collapse show" id="services">
-            <li>
-              <i className="bi bi-exclamation-circle-fill"></i>
-              <span>شكاوى</span>
-            </li>
+            <Link
+              to="/complaints"
+              style={{ textDecoration: "none" }}
+              onClick={() => dispatch(complaints())}
+            >
+              <li className={currentPlace === "complaints" ? "visited" : ""}>
+                <i className="bi bi-exclamation-circle-fill"></i>
+                <span>شكاوى</span>
+              </li>
+            </Link>
+            <Link
+              to="/suggestions"
+              style={{ textDecoration: "none" }}
+              onClick={() => dispatch(suggestions())}
+            >
+              <li className={currentPlace === "suggestions" ? "visited" : ""}>
+                <i className="bi bi-patch-check-fill"></i>
+                <span>اقتراحات</span>
+              </li>
+            </Link>
             <li>
               <i className="bi bi-clock-history"></i>
               <span>سجلات النظام</span>
@@ -137,12 +166,12 @@ const Sidebar = () => {
               onClick={() => dispatch(profile())}
             >
               <li>
-                <i class="bi bi-person-fill"></i>
+                <i className="bi bi-person-fill"></i>
                 <span>ملف شخصي</span>
               </li>
             </Link>
             <li onClick={logoutConfirmation}>
-            <i class="bi bi-box-arrow-right"></i>
+              <i className="bi bi-box-arrow-right"></i>
               <span id="log-out">تسجيل خروج</span>
             </li>
           </div>

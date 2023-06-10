@@ -28,7 +28,7 @@ const Register = (props) => {
     if (cookie.get("jwt_store") !== undefined) {
       window.location.href = "/";
     }
-  },[]);
+  }, []);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -39,10 +39,9 @@ const Register = (props) => {
     user.append("email", email);
     user.append("phone_number", phoneNumber);
     user.append("password", password);
-    if(password !== passwordConfirm)
-    {
+    if (password !== passwordConfirm) {
       showError("Password doesn't match", toast);
-      return
+      return;
     }
     dispatch(userRegister(user)).then((res) => {
       if (res.payload.status === true) {
@@ -111,7 +110,7 @@ const Register = (props) => {
                 style={{ width: "100%" }}
               />
               <label htmlFor="warehouse">
-                <i className="fas fa-warehouse"></i>
+                <i className="bi bi-building-fill"></i>
                 <p>اسم المستودع</p>
               </label>
             </span>
@@ -127,7 +126,7 @@ const Register = (props) => {
                 style={{ width: "100%" }}
               />
               <label htmlFor="phoneNumber">
-                <i className="fas fa-mobile-alt"></i>
+                <i className="bi bi-phone-fill"></i>
                 <p>رقم الهاتف</p>
               </label>
             </span>
@@ -144,7 +143,7 @@ const Register = (props) => {
                 type="email"
               />
               <label htmlFor="email">
-                <i className="fa fa-envelope"></i>
+                <i className="bi bi-envelope-at-fill"></i>
                 <p>البريد الالكتروني</p>
               </label>
             </span>
@@ -161,7 +160,7 @@ const Register = (props) => {
                 type="password"
               />
               <label htmlFor="password">
-                <i className="fas fa-user-lock	"></i>
+                <i className="bi bi-person-fill-lock"></i>
                 <p>كلمة المرور</p>
               </label>
             </span>
@@ -178,13 +177,14 @@ const Register = (props) => {
                 type="password"
               />
               <label htmlFor="passwordConfirm">
-                <i className="fas fa-user-lock	"></i>
+                <i className="bi bi-person-fill-lock"></i>
                 <p>تأكيد كلمة المرور</p>
               </label>
             </span>
           </div>
           <div className="submit">
             <Button
+              loadingIcon="pi pi-spin pi-spinner"
               label="تسجيل الدخول"
               raised
               loading={loading}

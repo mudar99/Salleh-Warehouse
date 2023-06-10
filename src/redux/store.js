@@ -7,6 +7,9 @@ import categorySlice from './API/categorySlice';
 import settingSlice from './settingSlice';
 import sendfilesSlice from './API/settings/sendfilesSlice';
 import mailVerSlice from './API/settings/mailVerSlice';
+import walletSlice from './API/settings/walletSlice';
+import suggestionsSlice from './API/complaints & suggestions/suggestionsSlice';
+import complaintsSlice from './API/complaints & suggestions/complaintsSlice';
 
 const store = configureStore({
     reducer: {
@@ -18,6 +21,9 @@ const store = configureStore({
         settings: settingSlice,
         authFiles: sendfilesSlice,
         mailVer: mailVerSlice,
+        wallet: walletSlice,
+        suggestions: suggestionsSlice,
+        complaints: complaintsSlice
     }
 });
 export default store

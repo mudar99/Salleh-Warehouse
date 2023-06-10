@@ -1,0 +1,74 @@
+@import "../../style/vars";
+
+.suggestions-datatable {
+  margin: 50px;
+  .suggestions {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+
+    .suggestion {
+      padding: 15px;
+      box-shadow: 2px 4px 10px 1px $dark-font-color;
+      border-radius: 10px;
+      height: auto;
+      background-color: $body-color;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 4px 6px 12px 2px $dark-font-color;
+      }
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $header-color;
+        margin-bottom: 8px;
+        padding-bottom: 15px;
+      }
+
+      .description {
+        font-size: 1rem;
+        margin-top: 10px;
+        color: #212121;
+      }
+      .arabic {
+        text-align: right;
+      }
+      .english {
+        text-align: left;
+      }
+    }
+  }
+  .action {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .add-suggestion {
+      position: relative;
+      padding: 15px;
+      box-shadow: 2px 4px 10px 1px $dark-font-color;
+      border-radius: 10px;
+      height: auto;
+      background-color: $body-color;
+      transition: box-shadow 0.3s ease;
+      width: 150px;
+      height: 150px;
+      .plus-icon {
+        color: $primary-color;
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 4px 6px 12px 2px #565656;
+      }
+    }
+  }
+}

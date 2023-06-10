@@ -89,6 +89,7 @@ const SendFiles = (props) => {
         <MapTest setLatLng={(e) => setNewPosition(e)} />
         <span className="actions">
           <Button
+            loadingIcon="pi pi-spin pi-spinner"
             label="إضافة"
             icon="pi pi-check"
             type="submit"

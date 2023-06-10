@@ -1,0 +1,11 @@
+@import "../../../style/vars";
+.wallet {
+  .title {
+    min-width: 50vw;
+    margin: 10px;
+    padding: 10px;
+    background: $home-color;
+    color: $list-color;
+    border-color: $home-color;
+  }
+}

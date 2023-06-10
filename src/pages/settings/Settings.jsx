@@ -5,11 +5,13 @@ import { closed } from "../../redux/settingSlice";
 import SendFiles from "./auth-files/SendFiles";
 import { Dialog } from "primereact/dialog";
 import MailVerifications from "./mail-verification/MailVerifications";
+import Wallet from "./wallet/Wallet";
 
 const Settings = () => {
   const dispatch = useDispatch();
   const [accoutVer, setAccoutVer] = useState(false);
   const [mailVer, setMailVer] = useState(false);
+  const [wallet, setWallet] = useState(false);
   const { status } = useSelector((state) => state.settings);
 
   return (
@@ -50,9 +52,14 @@ const Settings = () => {
             }}
           >
             <h6 className="mt-1">تأكيد البريد الإلكتروني</h6>
-            <i class="bi bi-envelope-check-fill"></i>
+            <i className="bi bi-envelope-check-fill"></i>
           </li>
-          <li className="item">
+          <li
+            className="item"
+            onClick={() => {
+              setWallet(true);
+            }}
+          >
             <h6 className="mt-1">المحفظة</h6>
             <i className="bi bi-wallet-fill"></i>
           </li>
@@ -84,6 +91,17 @@ const Settings = () => {
         appendTo={"self"}
       >
         <MailVerifications visibleState={(e) => setMailVer(e)} />
+      </Dialog>
+
+      <Dialog
+        header="المحفظة الإلكترونية"
+        visible={wallet}
+        style={{ width: "50vw" }}
+        onHide={() => setWallet(false)}
+        resizable
+        appendTo={"self"}
+      >
+        <Wallet visibleState={(e) => setWallet(e)} />
       </Dialog>
     </>
   );

@@ -6,7 +6,10 @@ import ProductsDataTable from "../products/ProductsDataTable";
 import CategorisView from "../categories/CategorisView";
 import ProfileContent from "../profile/ProfileContent";
 import Settings from "../settings/Settings";
- 
+import PurchasesDataTable from "../purchases/PurchasesDataTable";
+import SuggestionsDataTable from "../suggestions/SuggestionsDataTable";
+import ComplaintsDataTable from "../complaints/ComplaintsDataTable";
+
 const List = (props) => {
   const visibleCallBack = (e, rowData) => {
     // switch (e) {
@@ -31,7 +34,12 @@ const List = (props) => {
         return <CategorisView createState={visibleCallBack} />;
       case "ProfileContent":
         return <ProfileContent />;
-        return;
+      case "PurshasesDataTable":
+        return <PurchasesDataTable />;
+      case "SuggestionsDataTable":
+        return <SuggestionsDataTable addSuggest={visibleCallBack}/>;
+      case "ComplaintsDataTable":
+        return <ComplaintsDataTable addComplaint={visibleCallBack}/>;
       default:
         return;
     }
