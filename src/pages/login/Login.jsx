@@ -66,7 +66,7 @@ const Login = (props) => {
                 style={{ width: "100%" }}
               />
               <label htmlFor="email">
-                <i className="fa fa-envelope"></i>
+                <i currentPageName="bi bi-envelope-at-fill"></i>
                 <p>البريد الالكتروني</p>
               </label>
             </span>
@@ -83,7 +83,7 @@ const Login = (props) => {
                 style={{ width: "100%" }}
               />
               <label htmlFor="password">
-                <i className="fas fa-user-lock	"></i>
+                <i className="bi bi-person-fill-lock"></i>
                 <p>كلمة المرور</p>
               </label>
             </span>
@@ -92,6 +92,7 @@ const Login = (props) => {
             <Button
               label="تسجيل الدخول"
               raised
+              loadingIcon="pi pi-spin pi-spinner"
               loading={loading}
               type="submit"
               dir="ltr"

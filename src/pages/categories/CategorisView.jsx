@@ -55,10 +55,9 @@ const CategorisView = (props) => {
       return (
         <div className="text-center">
           <Button
-            className="m-1"
+            className="p-button-rounded p-button-text p-button-success"
             dir="ltr"
             icon="pi pi-spinner"
-            label="المزيد"
             severity="success"
             onClick={() => {
               let info;
@@ -98,10 +97,9 @@ const CategorisView = (props) => {
             }}
           />
           <Button
-            className="m-1"
-            dir="ltr"
             icon="pi pi-plus"
-            severity="success"
+            className="p-button-rounded p-button-text p-button-success"
+            aria-label="Submit"
             onClick={() => props.createState("C", rowData)}
           />
         </div>
@@ -110,11 +108,10 @@ const CategorisView = (props) => {
       return (
         <div className="text-center">
           <Button
-            className="m-1"
-            dir="ltr"
             icon="pi pi-plus"
-            severity="success"
-            onClick={() => props.createState("C",rowData)}
+            className="p-button-rounded p-button-text p-button-success"
+            aria-label="Submit"
+            onClick={() => props.createState("C", rowData)}
           />
         </div>
       );
