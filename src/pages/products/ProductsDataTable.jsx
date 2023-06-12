@@ -11,6 +11,7 @@ import { Toast } from "primereact/toast";
 import { DeleteProduct, GetProducts } from "../../redux/API/productSlice";
 import { Paginator } from "primereact/paginator";
 import { local } from "../../API";
+import { isArabic } from "../../utils/langType";
 
 const ProductsDataTable = (props) => {
   const dispatch = useDispatch();
@@ -89,10 +90,7 @@ const ProductsDataTable = (props) => {
     <div className="datatable">
       {loading && <LoadingFS />}
       <div className="card">
-        <DataTable
-          value={data}
-          tableStyle={{ minWidth: "50rem" }}
-        >
+        <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
           <Column align="center" header={headers[0]} field="name"></Column>
           <Column
             align="center"
@@ -103,7 +101,10 @@ const ProductsDataTable = (props) => {
           <Column align="center" header={headers[3]} field="quantity"></Column>
           <Column align="center" header={headers[4]} field="made"></Column>
           <Column
-            align="center"
+            alignHeader="center"
+            bodyClassName={(rowData) => {
+              return isArabic(rowData.description) ? "arabic" : "english";
+            }}
             header={headers[5]}
             field="description"
           ></Column>
@@ -111,7 +112,12 @@ const ProductsDataTable = (props) => {
             align="center"
             header={headers[6]}
             body={(rowData) => {
-              return <img src={local + rowData.image_path} style={{width : '100px'}}/>;
+              return (
+                <img
+                  src={local + rowData.image_path}
+                  style={{ width: "100px" }}
+                />
+              );
             }}
           ></Column>
           <Column

@@ -1,0 +1,16 @@
+@import "../../style/vars";
+.purchase-orders {
+  .drop-down {
+    h6 {
+      margin-top: 10px;
+    }
+  }
+  .dropdown-card {
+    padding: 15px;
+    box-shadow: 2px 4px 10px 1px $dark-font-color;
+    border-radius: 2px;
+    height: auto;
+    background-color: $body-color;
+    transition: box-shadow 0.3s ease;
+  }
+}

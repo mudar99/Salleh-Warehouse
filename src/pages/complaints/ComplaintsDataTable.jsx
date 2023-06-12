@@ -5,6 +5,7 @@ import { Paginator } from "primereact/paginator";
 import { GetSuggestions } from "../../redux/API/complaints & suggestions/suggestionsSlice";
 import { GetComplaints } from "../../redux/API/complaints & suggestions/complaintsSlice";
 import LoadingFS from "../components/loading/LoadingFS";
+import { isArabic } from "../../utils/langType";
 
 const ComplaintsDataTable = (props) => {
   const dispatch = useDispatch();
@@ -12,10 +13,6 @@ const ComplaintsDataTable = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [basicFirst, setBasicFirst] = useState(1);
   const [basicRows, setBasicRows] = useState(6);
-  const isArabic = (text) => {
-    const arabicPattern = /[\u0600-\u06FF\u0750-\u077F]/;
-    return arabicPattern.test(text);
-  };
   const { data, loading, btnLoading, totalItems } = useSelector(
     (state) => state.complaints
   );

@@ -10,6 +10,7 @@ import mailVerSlice from './API/settings/mailVerSlice';
 import walletSlice from './API/settings/walletSlice';
 import suggestionsSlice from './API/complaints & suggestions/suggestionsSlice';
 import complaintsSlice from './API/complaints & suggestions/complaintsSlice';
+import purchaseSlice from './API/purchases/purchaseSlice';
 
 const store = configureStore({
     reducer: {
@@ -23,7 +24,8 @@ const store = configureStore({
         mailVer: mailVerSlice,
         wallet: walletSlice,
         suggestions: suggestionsSlice,
-        complaints: complaintsSlice
+        complaints: complaintsSlice,
+        purchases: purchaseSlice
     }
 });
 export default store

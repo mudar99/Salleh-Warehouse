@@ -6,6 +6,7 @@ import { Toast } from "primereact/toast";
 import { showError, showSuccess } from "../../ToastService";
 import { FileUpload } from "primereact/fileupload";
 import { UpdateProduct as updateApi } from "../../redux/API/productSlice";
+import LanguageInput from "../../utils/LanguageInput";
 
 export const UpdateProduct = (props) => {
   console.log(props.data);
@@ -54,71 +55,67 @@ export const UpdateProduct = (props) => {
       <div className="form-group wrapper">
         <div className="container mt-3">
           <h6 className="mt-2 text-right">اسم المنتج</h6>
-          <InputText
+          <LanguageInput
             defaultValue={props.data.name}
             placeholder="Product name"
-            style={{ width: "100%" }}
+            type="text"
             onChange={(e) => {
-              setProdName(e.target.value);
+              setProdName(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">وصف المنتج</h6>
-          <InputText
+          <LanguageInput
             defaultValue={props.data.description}
             placeholder="Description"
-            style={{ width: "100%" }}
+            type="text"
             onChange={(e) => {
-              setProdDescription(e.target.value);
+              setProdDescription(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">الشركة المصنعة للمنتج</h6>
-          <InputText
+          <LanguageInput
             defaultValue={props.data.made}
             placeholder="Manufacture"
-            style={{ width: "100%" }}
             type="text"
             onChange={(e) => {
-              setProdMade(e.target.value);
+              setProdMade(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">سعر المنتج</h6>
-          <InputText
+          <LanguageInput
             defaultValue={props.data.price}
             placeholder="Prodcut price"
-            style={{ width: "100%" }}
-            type="text"
+            type="number"
             onChange={(e) => {
-              setProdPrice(e.target.value);
+              setProdPrice(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">كود المنتج</h6>
-          <InputText
+          <LanguageInput
             defaultValue={props.data.product_code}
             placeholder="Product code"
-            style={{ width: "100%" }}
             type="text"
             onChange={(e) => {
-              setProdCode(e.target.value);
+              setProdCode(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">الكمية</h6>
-          <InputText
+          <LanguageInput
             defaultValue={props.data.quantity}
             placeholder="Quantity"
-            style={{ width: "100%" }}
-            type="text"
+            type="number"
             onChange={(e) => {
-              setProdQuantity(e.target.value);
+              setProdQuantity(e);
             }}
           />
         </div>
@@ -136,7 +133,7 @@ export const UpdateProduct = (props) => {
       <span className="actions">
         <Button
           loadingIcon="pi pi-spin pi-spinner"
-          label="إضافة"
+          label="تعديل"
           icon="pi pi-check"
           type="submit"
           raised

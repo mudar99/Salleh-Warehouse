@@ -37,14 +37,20 @@ body {
   input {
     height: 40px;
     font-size: 18px;
-    text-align: left;
-    direction: ltr;
     &:hover {
       border-color: $primary-color;
     }
     &:focus {
       box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
     }
+  }
+  .arabic {
+    direction: rtl;
+    text-align: right;
+  }
+  .english {
+    direction: ltr;
+    text-align: left;
   }
   .actions {
     display: flex;

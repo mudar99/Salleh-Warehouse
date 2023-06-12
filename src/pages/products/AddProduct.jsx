@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Button } from "primereact/button";
-import { InputText } from "primereact/inputtext";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateProduct, GetProducts } from "../../redux/API/productSlice";
 import { Toast } from "primereact/toast";
 import { showError, showSuccess } from "../../ToastService";
 import { FileUpload } from "primereact/fileupload";
+import LanguageInput from "../../utils/LanguageInput";
 
 export const AddProduct = (props) => {
   const [prodName, setProdName] = useState();
@@ -29,7 +29,7 @@ export const AddProduct = (props) => {
     obj.append("quantity", prodQuantity);
     obj.append("product_photo", prodPhoto);
     let data = { id: props.data.key, obj };
-    console.log(prodQuantity)
+    console.log(prodQuantity);
     dispatch(CreateProduct(data)).then((res) => {
       console.log(res);
       if (res.payload.status === true) {
@@ -50,65 +50,61 @@ export const AddProduct = (props) => {
       <div className="form-group wrapper">
         <div className="container mt-3">
           <h6 className="mt-2 text-right">اسم المنتج</h6>
-          <InputText
+          <LanguageInput
             placeholder="Product name"
-            style={{ width: "100%" }}
+            type="text"
             onChange={(e) => {
-              setProdName(e.target.value);
+              setProdName(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">وصف المنتج</h6>
-          <InputText
+          <LanguageInput
             placeholder="Description"
-            style={{ width: "100%" }}
+            type="text"
             onChange={(e) => {
-              setProdDescription(e.target.value);
+              setProdDescription(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">الشركة المصنعة للمنتج</h6>
-          <InputText
+          <LanguageInput
             placeholder="Manufacture"
-            style={{ width: "100%" }}
             type="text"
             onChange={(e) => {
-              setProdMade(e.target.value);
+              setProdMade(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">سعر المنتج</h6>
-          <InputText
+          <LanguageInput
             placeholder="Prodcut price"
-            style={{ width: "100%" }}
-            type="text"
+            type="number"
             onChange={(e) => {
-              setProdPrice(e.target.value);
+              setProdPrice(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">كود المنتج</h6>
-          <InputText
+          <LanguageInput
             placeholder="Product code"
-            style={{ width: "100%" }}
             type="text"
             onChange={(e) => {
-              setProdCode(e.target.value);
+              setProdCode(e);
             }}
           />
         </div>
         <div className="container mt-3">
           <h6 className="mt-2 text-right">الكمية</h6>
-          <InputText
+          <LanguageInput
             placeholder="Quantity"
-            style={{ width: "100%" }}
-            type="text"
+            type="number"
             onChange={(e) => {
-              setProdQuantity(e.target.value);
+              setProdQuantity(e);
             }}
           />
         </div>

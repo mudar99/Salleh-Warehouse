@@ -28,13 +28,20 @@ const CategorisView = (props) => {
   const [loading, setLoading] = useState(false);
 
   const onBasicPageChange = (event) => {
-    // let currentPage = event.page + 1;
-    // setCurrentPage(currentPage);
-    // setBasicFirst(event.first);
-    // setBasicRows(event.rows);
-    // let info = { size: basicRows, page: currentPage };
-    // dispatch(GetAdmins(info));
+    let currentPage = event.page + 1;
+    setCurrentPage(currentPage);
+    setBasicFirst(event.first);
+    setBasicRows(event.rows);
+    let info = {
+      size: basicRows,
+      page: currentPage,
+      capacity: capacity,
+      id: 1,
+      load: 2,
+    };
+    dispatch(GetCategories(info));
   };
+
   useEffect(() => {
     let info = {
       size: basicRows,
@@ -91,8 +98,6 @@ const CategorisView = (props) => {
                   load: co,
                 };
               }
-              // console.log(chg);
-              // console.log(co);
               dispatch(GetCategories(info));
             }}
           />

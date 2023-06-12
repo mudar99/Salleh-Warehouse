@@ -66,7 +66,7 @@ const Login = (props) => {
                 style={{ width: "100%" }}
               />
               <label htmlFor="email">
-                <i currentPageName="bi bi-envelope-at-fill"></i>
+                <i className="bi bi-envelope-at-fill"></i>
                 <p>البريد الالكتروني</p>
               </label>
             </span>

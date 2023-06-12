@@ -4,16 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Paginator } from "primereact/paginator";
 import { GetSuggestions } from "../../redux/API/complaints & suggestions/suggestionsSlice";
 import LoadingFS from "../components/loading/LoadingFS";
+import { isArabic } from "../../utils/langType";
 
 const SuggestionsDataTable = (props) => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [basicFirst, setBasicFirst] = useState(1);
   const [basicRows, setBasicRows] = useState(6);
-  const isArabic = (text) => {
-    const arabicPattern = /[\u0600-\u06FF\u0750-\u077F]/;
-    return arabicPattern.test(text);
-  };
   const { data, loading, btnLoading, totalItems } = useSelector(
     (state) => state.suggestions
   );

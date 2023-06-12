@@ -2,7 +2,7 @@
 .datatable {
   // transform: scale(0.96);
   // .p-datatable-loading-icon {
-  //   margin-top: 150px; 
+  //   margin-top: 150px;
   // }
   .header {
     display: flex;
@@ -33,6 +33,14 @@
   .p-datatable .p-sortable-column .p-sortable-column-icon {
     margin-right: 10px;
     color: $primary-color;
+  }
+  .p-datatable .p-datatable-tbody > tr > .arabic {
+    text-align: right;
+    direction: rtl;
+  }
+  .p-datatable .p-datatable-tbody > tr > .english {
+    text-align: left;
+    direction: ltr;
   }
 
   .p-confirm-popup {

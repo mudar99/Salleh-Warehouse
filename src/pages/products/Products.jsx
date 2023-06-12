@@ -32,6 +32,7 @@ const Products = () => {
         onHide={() => setCreateVisible(false)}
         resizable
         appendTo={"self"}
+        header="إضافة منتج"
       >
         <AddProduct visibleState={(e) => setCreateVisible(e)} />
       </Dialog>
@@ -41,6 +42,7 @@ const Products = () => {
         onHide={() => setUpdateVisible(false)}
         resizable
         appendTo={"self"}
+        header="تعديل منتج"
       >
         <UpdateProduct data={data} visibleState={(e) => setUpdateVisible(e)} />
       </Dialog>

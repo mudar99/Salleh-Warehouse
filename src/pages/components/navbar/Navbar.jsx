@@ -23,24 +23,27 @@ const Navbar = (props) => {
             </Link>
           </div>
           <div className="item" onClick={() => dispatch(opened())}>
-          <i className="bi bi-gear-fill"></i>
+            <i className="bi bi-gear-fill"></i>
           </div>
           <div className="item">
-          <i className="bi bi-bell-fill"></i>
+            <i className="bi bi-bell-fill"></i>
             <div className="counter">2</div>
           </div>
           <div className="item">
-          <i className="bi bi-envelope-fill"></i>
+            <i className="bi bi-envelope-fill"></i>
             <div className="counter">1</div>
           </div>
           <div className="item">
-            <i className="bi bi-moon-fill" onClick={() => dispatch(toggle())}></i>
+            <i
+              className="bi bi-moon-fill"
+              onClick={() => dispatch(toggle())}
+            ></i>
           </div>
           <div className="item">
-          <i className="bi bi-folder-fill"></i>
+            <i className="bi bi-folder-fill"></i>
           </div>
           <div className="item">
-          <i className="bi bi-globe"></i>
+            <i className="bi bi-globe"></i>
           </div>
         </div>
 
