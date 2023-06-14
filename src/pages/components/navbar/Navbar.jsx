@@ -16,7 +16,7 @@ const Navbar = (props) => {
           <div className="item mb-2">
             <Link to="/profile">
               <img
-                src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                src="/Img/man.png"
                 alt=""
                 className="avatar"
               />

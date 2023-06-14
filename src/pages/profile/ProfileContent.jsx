@@ -11,7 +11,8 @@ const ProfileContent = () => {
 
           <div className="profile-card__cnt js-profile-cnt">
             <div className="profile-card__name">
-              <i className="fa fa-check"></i> Mudar AF
+              <i className="bi bi-patch-check m-2"></i>
+              Mudar AF
             </div>
             <div className="profile-card__txt">
               Storehouse Name: <strong>Abo Fakher SH-1</strong>

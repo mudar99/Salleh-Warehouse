@@ -6,12 +6,14 @@ import SendFiles from "./auth-files/SendFiles";
 import { Dialog } from "primereact/dialog";
 import MailVerifications from "./mail-verification/MailVerifications";
 import Wallet from "./wallet/Wallet";
+import ResetPassword from "./reset-password/ResetPassword";
 
 const Settings = () => {
   const dispatch = useDispatch();
   const [accoutVer, setAccoutVer] = useState(false);
   const [mailVer, setMailVer] = useState(false);
   const [wallet, setWallet] = useState(false);
+  const [passReset, setPassReset] = useState(false);
   const { status } = useSelector((state) => state.settings);
 
   return (
@@ -32,7 +34,12 @@ const Settings = () => {
         </div>
         <div className="title">يمكنك التحكم بإعدادات الحساب من هنا</div>
         <ul className="list">
-          <li className="item">
+          <li
+            className="item"
+            onClick={() => {
+              setPassReset(true);
+            }}
+          >
             <h6 className="mt-1">تغيير كلمة المرور</h6>
             <i className="bi bi-lock-fill"></i>
           </li>
@@ -102,6 +109,17 @@ const Settings = () => {
         appendTo={"self"}
       >
         <Wallet visibleState={(e) => setWallet(e)} />
+      </Dialog>
+
+      <Dialog
+        header="إعادة تعيين كلمة المرور"
+        visible={passReset}
+        style={{ width: "50vw" }}
+        onHide={() => setPassReset(false)}
+        resizable
+        appendTo={"self"}
+      >
+        <ResetPassword visibleState={(e) => setPassReset(e)} />
       </Dialog>
     </>
   );

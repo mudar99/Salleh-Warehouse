@@ -19,6 +19,14 @@
       .p-treetable-tbody > tr > td {
         text-align: right;
       }
+      .p-treetable-tbody > tr > .arabic {
+        text-align: right;
+        direction: rtl;
+      }
+      .p-treetable-tbody > tr > .english {
+        text-align: left;
+        direction: ltr;
+      }
       .p-treetable-tbody > tr.p-highlight,
       .p-treetable-tbody > tr.p-highlight .p-treetable-toggler {
         color: $header-color;
@@ -31,9 +39,10 @@
         transform: rotate(180deg);
       }
     }
-
-    .p-paginator {
-      direction: ltr;
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10%;
     }
   }
 }

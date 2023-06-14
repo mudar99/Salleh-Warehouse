@@ -1,36 +1,55 @@
 import { createAsyncThunk, createSlice, } from "@reduxjs/toolkit";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import { AcceptPurchaseOrderAPI, GetPurchaseOrdersAPI, RejectPurchaseOrderAPI } from "../../../API";
+import { AcceptPurchaseOrderAPI, GetAcceptedPurchaseOrdersAPI, GetRejectedPurchaseOrdersAPI, GetWaitingPurchaseOrdersAPI, RejectPurchaseOrderAPI } from "../../../API";
 
 const cookie = new Cookies();
 const token = cookie.get("jwt_store");
-export const GetPurchases = createAsyncThunk("storehouse/Purchases/get", async (info) => {
+export const GetWaitingPurchases = createAsyncThunk("storehouse/purchases/waiting/get", async (info) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
-    let { data } = await axios.get(GetPurchaseOrdersAPI + info.size + "&page=" + info.page);
+    let { data } = await axios.get(GetWaitingPurchaseOrdersAPI + info.size + "&page=" + info.page);
     console.log(data)
     return data;
 });
-export const AcceptPurshaseOrder = createAsyncThunk("storehouse/Purchases/accept", async (info, { rejectWithValue }) => {
+
+export const GetAcceptedPurchases = createAsyncThunk("storehouse/purchases/accepted/get", async (info) => {
+    axios.defaults.headers = {
+        Authorization: `Bearer ${token}`,
+    }
+    let { data } = await axios.get(GetAcceptedPurchaseOrdersAPI + info.size + "&page=" + info.page);
+    console.log(data)
+    return data;
+});
+
+export const GetRejectedPurchases = createAsyncThunk("storehouse/purchases/rejected/get", async (info) => {
+    axios.defaults.headers = {
+        Authorization: `Bearer ${token}`,
+    }
+    let { data } = await axios.get(GetRejectedPurchaseOrdersAPI + info.size + "&page=" + info.page);
+    console.log(data)
+    return data;
+});
+
+export const AcceptPurshaseOrder = createAsyncThunk("storehouse/purchases/accept", async (info, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
     try {
-        let { data } = await axios.post(AcceptPurchaseOrderAPI);
+        let { data } = await axios.post(AcceptPurchaseOrderAPI, info);
         console.log(data)
         return data;
     } catch (error) {
         return rejectWithValue(error.response.data.message);
     }
 });
-export const RejectPurchaseOrder = createAsyncThunk("storehouse/Purchases/reject", async (info, { rejectWithValue }) => {
+export const RejectPurchaseOrder = createAsyncThunk("storehouse/purchases/reject", async (info, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
     try {
-        let { data } = await axios.post(RejectPurchaseOrderAPI);
+        let { data } = await axios.post(RejectPurchaseOrderAPI, info);
         console.log(data)
         return data;
     } catch (error) {
@@ -48,22 +67,44 @@ export const purchaseSlice = createSlice({
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(GetPurchases.pending, (state) => {
+        builder.addCase(GetWaitingPurchases.pending, (state) => {
             state.loading = true;
-        }).addCase(GetPurchases.fulfilled, (state, { payload }) => {
+        }).addCase(GetWaitingPurchases.fulfilled, (state, { payload }) => {
             console.log(payload)
-            state.data = payload.data;
+            state.data = payload.data.data;
             state.totalItems = payload.data.total
             state.currentPage = payload.data.current_page
             state.loading = false;
-        }).addCase(GetPurchases.rejected, (state, { payload }) => {
+        }).addCase(GetWaitingPurchases.rejected, (state, { payload }) => {
+            state.loading = false;
+        })
+
+        builder.addCase(GetAcceptedPurchases.pending, (state) => {
+            state.loading = true;
+        }).addCase(GetAcceptedPurchases.fulfilled, (state, { payload }) => {
+            console.log(payload)
+            state.data = payload.data.data;
+            state.totalItems = payload.data.total
+            state.currentPage = payload.data.current_page
+            state.loading = false;
+        }).addCase(GetAcceptedPurchases.rejected, (state, { payload }) => {
+            state.loading = false;
+        })
+        builder.addCase(GetRejectedPurchases.pending, (state) => {
+            state.loading = true;
+        }).addCase(GetRejectedPurchases.fulfilled, (state, { payload }) => {
+            console.log(payload)
+            state.data = payload.data.data;
+            state.totalItems = payload.data.total
+            state.currentPage = payload.data.current_page
+            state.loading = false;
+        }).addCase(GetRejectedPurchases.rejected, (state, { payload }) => {
             state.loading = false;
         })
 
         builder.addCase(AcceptPurshaseOrder.pending, (state) => {
             state.btnLoading = true;
         }).addCase(AcceptPurshaseOrder.fulfilled, (state, { payload }) => {
-            // state.data = payload.data;
             state.btnLoading = false;
         }).addCase(AcceptPurshaseOrder.rejected, (state, { payload }) => {
             state.btnLoading = false;
@@ -72,7 +113,6 @@ export const purchaseSlice = createSlice({
         builder.addCase(RejectPurchaseOrder.pending, (state) => {
             state.btnLoading = true;
         }).addCase(RejectPurchaseOrder.fulfilled, (state, { payload }) => {
-            // state.data = payload.data;
             state.btnLoading = false;
         }).addCase(RejectPurchaseOrder.rejected, (state, { payload }) => {
             state.btnLoading = false;

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { GetChildCatAPI, GetRootCatAPI } from "../../API";
 import Cookies from "universal-cookie";
 import { TreeTable } from "primereact/treetable";
 import { Column } from "primereact/column";
@@ -9,6 +7,7 @@ import LoadingFS from "../components/loading/LoadingFS";
 import { Button } from "primereact/button";
 import { Paginator } from "primereact/paginator";
 import { GetCategories } from "../../redux/API/categorySlice";
+import { isArabic } from "../../utils/langType";
 
 const CategorisView = (props) => {
   const cookie = new Cookies();
@@ -17,7 +16,7 @@ const CategorisView = (props) => {
   const dispatch = useDispatch();
   let nodes = [];
   const [basicFirst, setBasicFirst] = useState(1);
-  const [basicRows, setBasicRows] = useState(5);
+  const [basicRows, setBasicRows] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
   const [capacity, setCapacity] = useState(2);
   const [counter, setCounter] = useState(1);
@@ -52,10 +51,6 @@ const CategorisView = (props) => {
     };
     dispatch(GetCategories(info));
   }, []);
-
-  const onSelect = (event) => {
-    let id = event.node.data.id;
-  };
 
   const acitonBodyTemplate = (rowData) => {
     if (rowData.children.length !== 0) {
@@ -122,6 +117,18 @@ const CategorisView = (props) => {
       );
     }
   };
+  const bodyClassName = (category_id, field) => {
+    let className = undefined;
+    if (category_id === null) {
+      className = "parent text-break ";
+    }
+    if (isArabic(field)) {
+      className = className ? className + "arabic" : "arabic";
+    } else {
+      className = className ? className + "english" : "english";
+    }
+    return className;
+  };
   return (
     <div className=" ">
       <div className="treetable">
@@ -130,7 +137,6 @@ const CategorisView = (props) => {
           showGridlines
           value={data}
           tableStyle={{ minWidth: "50rem" }}
-          onSelect={onSelect}
           selectionMode="single"
           selectionKeys={selectedNodeKey}
           onSelectionChange={(e) => setSelectedNodeKey(e.value)}
@@ -139,23 +145,48 @@ const CategorisView = (props) => {
             bodyClassName={(rowData) =>
               rowData.category_id === null && "parent"
             }
-            field="name"
-            header="الاسم"
+            body={(rowData) => {
+              return <>{rowData.key}</>;
+            }}
+            header="المعرف"
+            className="text-break"
             expander
           ></Column>
           <Column
             bodyClassName={(rowData) =>
-              rowData.category_id === null && "parent"
+              bodyClassName(rowData.category_id, rowData.name)
+            }
+            field="name"
+            header="الاسم"
+          ></Column>
+          <Column
+            bodyClassName={(rowData) =>
+              bodyClassName(rowData.category_id, rowData.created_at)
             }
             field="created_at"
             header="تاريخ الإنشاء"
           ></Column>
           <Column
             bodyClassName={(rowData) =>
-              rowData.category_id === null && "parent"
+              bodyClassName(rowData.category_id, rowData.description)
             }
             field="description"
             header="الوصف"
+          ></Column>
+          <Column
+            bodyClassName={(rowData) =>
+              rowData.category_id === null && "image parent text-break"
+            }
+            body={(rowData) => {
+              return (
+                <div className="text-center">
+                  <img
+                    src={"http://127.0.0.1:8070" + rowData.data.image_path}
+                  ></img>
+                </div>
+              );
+            }}
+            header="صورة"
           ></Column>
           <Column
             bodyClassName={(rowData) =>

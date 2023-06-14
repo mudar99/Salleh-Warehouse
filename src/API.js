@@ -15,7 +15,9 @@ export const SendAuthFilesAPI = `${local}/api/store/file/send`;
 export const SendVerCodeAPI = `${local}/api/store/mail`;
 export const VerificationAPI = `${local}/api/store/mail/verify`;
 
-export const GetPurchaseOrdersAPI = `${local}/api/store/purchase/order/get?size=`;
+export const GetWaitingPurchaseOrdersAPI = `${local}/api/store/purchase/order/get?size=`;
+export const GetAcceptedPurchaseOrdersAPI = `${local}/api/store/purchase/order/accepted/get?size=`;
+export const GetRejectedPurchaseOrdersAPI = `${local}/api/store/purchase/order/rejected/get?size=`;
 export const AcceptPurchaseOrderAPI = `${local}/api/store/purchase/order/accept/`;
 export const RejectPurchaseOrderAPI = `${local}/api/store/purchase/order/reject/`;
 
@@ -28,3 +30,6 @@ export const GetSuggestionsAPI = `${local}/api/users/suggestions?size=`;
 
 export const AddComplaintAPI = `${local}/api/users/complaint/add`;
 export const GetComplaintsAPI = `${local}/api/users/complaints?size=`;
+
+export const SendResetPaswwordCodeAPI = `${local}/api/users/mail`;
+export const ResetPaswwordAPI = `${local}/api/users/mail/reset`;

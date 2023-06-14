@@ -8,10 +8,15 @@ import "../../style/datatable.scss";
 import { showInfo, showSuccess } from "../../ToastService";
 import { confirmPopup } from "primereact/confirmpopup";
 import { Toast } from "primereact/toast";
-import { DeleteProduct, GetProducts } from "../../redux/API/productSlice";
 import { Paginator } from "primereact/paginator";
-import { GetPurchaseOrdersAPI, local } from "../../API";
-import { GetPurchases } from "../../redux/API/purchases/purchaseSlice";
+import { local } from "../../API";
+import {
+  AcceptPurshaseOrder,
+  GetAcceptedPurchases,
+  GetRejectedPurchases,
+  GetWaitingPurchases,
+  RejectPurchaseOrder,
+} from "../../redux/API/purchases/purchaseSlice";
 import { Dropdown } from "primereact/dropdown";
 
 const PurchasesDataTable = (props) => {
@@ -28,7 +33,6 @@ const PurchasesDataTable = (props) => {
   const { data, loading, btnLoading, totalItems } = useSelector(
     (state) => state.purchases
   );
-  const [selectedData, setSelectedData] = useState();
   const toast = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [basicFirst, setBasicFirst] = useState(1);
@@ -36,7 +40,19 @@ const PurchasesDataTable = (props) => {
 
   useEffect(() => {
     let info = { size: basicRows, page: currentPage };
-    dispatch(GetPurchases(info));
+    switch (selectedOption) {
+      case "accepted":
+        dispatch(GetAcceptedPurchases(info));
+        break;
+      case "rejected":
+        dispatch(GetRejectedPurchases(info));
+        break;
+      case "waiting":
+        dispatch(GetWaitingPurchases(info));
+        break;
+      default:
+        break;
+    }
     console.log(selectedOption);
   }, [selectedOption]);
   const headers = [
@@ -69,11 +85,11 @@ const PurchasesDataTable = (props) => {
               acceptClassName: "p-button-danger",
               rejectClassName: "p-button-text",
               accept: () => {
-                dispatch(DeleteProduct(rowData.id)).then((res) => {
+                dispatch(AcceptPurshaseOrder(rowData.id)).then((res) => {
                   console.log(res);
                   if (res.payload.status === true) {
                     showSuccess(res.payload.message, toast);
-                    // dispatch(GetProducts());
+                    // dispatch(GetProducts(info));
                     return;
                   }
                 });
@@ -102,11 +118,12 @@ const PurchasesDataTable = (props) => {
               acceptClassName: "p-button-danger",
               rejectClassName: "p-button-text",
               accept: () => {
-                dispatch(DeleteProduct(rowData.id)).then((res) => {
+                dispatch(RejectPurchaseOrder(rowData.id)).then((res) => {
                   console.log(res);
                   if (res.payload.status === true) {
                     showSuccess(res.payload.message, toast);
                     // dispatch(GetProducts());
+                    setSelectedOption(selectedOption);
                     return;
                   }
                 });
@@ -121,26 +138,13 @@ const PurchasesDataTable = (props) => {
       </>
     );
   };
-  const GetSelectedSetHandler = () => {
-    let info = { size: basicRows, page: currentPage };
-    dispatch(GetPurchases(info));
-    switch (selectedOption) {
-      case "accepted":
-        setSelectedData(data.acceptedPurchaseOrders);
-      case "rejected":
-        setSelectedData(data.rejectedPurchaseOrders);
-      case "waiting":
-        setSelectedData(data.waitingPurchaseOrders);
-    }
-    console.log(selectedData);
-  };
   const onBasicPageChange = (event) => {
     let currentPage = event.page + 1;
     setCurrentPage(currentPage);
     setBasicFirst(event.first);
     setBasicRows(event.rows);
     let info = { size: basicRows, page: currentPage };
-    dispatch(GetProducts(info));
+    // dispatch(GetProducts(info));
   };
   return (
     <div className="purchase-orders">
@@ -155,7 +159,7 @@ const PurchasesDataTable = (props) => {
                   options={options}
                   onChange={handleSelect}
                   placeholder="Select an option"
-                  onSelect={GetSelectedSetHandler}
+                  // onSelect={GetSelectedSetHandler}
                 />
               </div>
             </div>
@@ -164,9 +168,9 @@ const PurchasesDataTable = (props) => {
       </div>
 
       <div className="datatable">
-        {/* {loading && <LoadingFS />} */}
+        {loading && <LoadingFS />}
         <div className="card">
-          <DataTable value={[{ 1: "TEXT" }]} tableStyle={{ minWidth: "50rem" }}>
+          <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
             <Column align="center" header={headers[0]} field="name"></Column>
             <Column
               align="center"

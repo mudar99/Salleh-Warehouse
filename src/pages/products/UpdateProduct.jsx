@@ -119,11 +119,12 @@ export const UpdateProduct = (props) => {
             }}
           />
         </div>
-        <div className="container mt-3 d-flex justify-content-between mt-4 mb-3 ">
+        <div className="container mt-3">
           <h6 className="mt-2 text-right">صورة المنتج</h6>
           <FileUpload
-            mode="basic"
-            name="demo[]"
+            mode="advanced"
+            chooseLabel="اختر صورة"
+            cancelLabel="إلغاء"
             accept="image/*"
             maxFileSize={1000000}
             onSelect={(event) => setProdPhoto(event.files[0])}

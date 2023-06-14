@@ -52,7 +52,7 @@
           color: $primary-color;
           padding: 10px;
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
           &:hover {
             i {
               transform: rotateY(360deg);

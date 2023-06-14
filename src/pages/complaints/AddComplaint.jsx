@@ -43,6 +43,7 @@ const AddComplaint = (props) => {
           <div className="container mt-3">
             <h6 className="mt-2 text-right">عنوان الشكوى</h6>
             <LanguageInput
+              required
               placeholder="Complaint title"
               type="text"
               onChange={(e) => {
@@ -53,6 +54,7 @@ const AddComplaint = (props) => {
           <div className="container mt-3">
             <h6 className="mt-2 text-right">وصف الشكوى</h6>
             <LanguageInput
+              required
               placeholder="Complaint description"
               type="text"
               onChange={(e) => {

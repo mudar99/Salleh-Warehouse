@@ -11,6 +11,7 @@ import walletSlice from './API/settings/walletSlice';
 import suggestionsSlice from './API/complaints & suggestions/suggestionsSlice';
 import complaintsSlice from './API/complaints & suggestions/complaintsSlice';
 import purchaseSlice from './API/purchases/purchaseSlice';
+import passResetSlice from './API/settings/passResetSlice';
 
 const store = configureStore({
     reducer: {
@@ -23,6 +24,7 @@ const store = configureStore({
         authFiles: sendfilesSlice,
         mailVer: mailVerSlice,
         wallet: walletSlice,
+        resetPassword: passResetSlice,
         suggestions: suggestionsSlice,
         complaints: complaintsSlice,
         purchases: purchaseSlice

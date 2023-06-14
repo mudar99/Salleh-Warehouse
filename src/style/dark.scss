@@ -374,8 +374,10 @@
 
   .suggestions-datatable,
   .complaints-datatable {
-    .suggestions,.complaints {
-      .suggestion,.complaint {
+    .suggestions,
+    .complaints {
+      .suggestion,
+      .complaint {
         box-shadow: 2px 4px 10px 1px $dark-box-shadow;
         background-color: $dark-secondary;
 
@@ -400,7 +402,8 @@
       }
     }
     .action {
-      .add-suggestion,.add-complaint {
+      .add-suggestion,
+      .add-complaint {
         box-shadow: 2px 4px 10px 1px $dark-box-shadow;
         background-color: $dark-secondary;
 
@@ -418,6 +421,15 @@
   .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
     background: $dark-box-shadow;
     color: $dark-font-color;
+  }
+  .p-fileupload {
+    .p-fileupload-buttonbar {
+      background-color: #212529;
+    }
+    .p-fileupload-content {
+      background-color: #212529;
+      color: $dark-font-color;
+    }
   }
   input {
     background-color: transparent;

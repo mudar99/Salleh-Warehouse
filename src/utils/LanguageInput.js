@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { isArabic, isEnglish } from './langType';
 import { InputText } from 'primereact/inputtext';
 
-const LanguageInput = ({ placeholder, onChange, type, defaultValue }) => {
+const LanguageInput = ({ placeholder, onChange, type, defaultValue, required }) => {
     const [className, setClassName] = useState()
     useEffect(() => {
         if (defaultValue) {
@@ -29,6 +29,7 @@ const LanguageInput = ({ placeholder, onChange, type, defaultValue }) => {
 
     return (
         <InputText
+            required={required && true}
             defaultValue={defaultValue}
             className={className}
             type={type}

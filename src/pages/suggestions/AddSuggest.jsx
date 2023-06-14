@@ -43,6 +43,7 @@ const AddSuggest = (props) => {
           <div className="container mt-3">
             <h6 className="mt-2 text-right">عنوان الاقتراح</h6>
             <LanguageInput
+              required
               placeholder="Suggest title"
               type="text"
               onChange={(e) => {
@@ -53,6 +54,7 @@ const AddSuggest = (props) => {
           <div className="container mt-3">
             <h6 className="mt-2 text-right">وصف الاقتراح</h6>
             <LanguageInput
+              required
               placeholder="Suggest description"
               type="text"
               onChange={(e) => {
