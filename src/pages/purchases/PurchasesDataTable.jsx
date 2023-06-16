@@ -4,7 +4,7 @@ import { DataTable } from "primereact/datatable";
 import { Button } from "primereact/button";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingFS from "../components/loading/LoadingFS";
-import "../../style/datatable.scss";
+import "./purchase-orders.scss";
 import { showInfo, showSuccess } from "../../ToastService";
 import { confirmPopup } from "primereact/confirmpopup";
 import { Toast } from "primereact/toast";
@@ -148,21 +148,18 @@ const PurchasesDataTable = (props) => {
   };
   return (
     <div className="purchase-orders">
-      <div className="d-flex align-items-center justify-content-center mt-2">
-        <div className="w-50 dropdown-card p-2">
-          <div className="drop-down">
-            <div className="d-flex justify-content-between">
-              <h6>أختر نوع طلب الشراء</h6>
-              <div className="dropdown-container">
-                <Dropdown
-                  value={selectedOption}
-                  options={options}
-                  onChange={handleSelect}
-                  placeholder="Select an option"
-                  // onSelect={GetSelectedSetHandler}
-                />
-              </div>
-            </div>
+      {loading && <LoadingFS />}
+      <div className="selection-container">
+        <div className="selection">
+          <h6>أختر نوع طلب الشراء</h6>
+          <div className="">
+            <Dropdown
+              appendTo={"self"}
+              value={selectedOption}
+              options={options}
+              onChange={handleSelect}
+              placeholder="Select an option"
+            />
           </div>
         </div>
       </div>

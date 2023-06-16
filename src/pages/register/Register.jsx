@@ -9,6 +9,7 @@ import { showError, showSuccess } from "../../ToastService";
 import Cookies from "universal-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { Toast } from "primereact/toast";
+import { fetchToken } from "../../firebase";
 
 const Register = (props) => {
   const toast = useRef(null);
@@ -23,11 +24,27 @@ const Register = (props) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [fcmRoken, setFcmToken] = useState("");
 
+  const handleFcmToken = (token) => {
+    // Handle the FCM token
+    console.log("FCM Token:", token);
+    // Perform additional actions with the token if needed
+  };
   useEffect(() => {
     if (cookie.get("jwt_store") !== undefined) {
       window.location.href = "/";
     }
+    fetchToken(handleFcmToken)
+      .then((token) => {
+        // Token retrieval success
+        console.log("Token Retrieved:", token);
+        setFcmToken(token);
+      })
+      .catch((error) => {
+        // Token retrieval error
+        console.error("Error Retrieving Token:", error);
+      });
   }, []);
 
   const submitHandler = (e) => {
@@ -39,6 +56,8 @@ const Register = (props) => {
     user.append("email", email);
     user.append("phone_number", phoneNumber);
     user.append("password", password);
+    user.append("fcm_token", fcmRoken);
+
     if (password !== passwordConfirm) {
       showError("Password doesn't match", toast);
       return;

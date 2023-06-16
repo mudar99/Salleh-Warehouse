@@ -51,6 +51,4 @@ export const passResetSlice = createSlice({
     }
 });
 
-export const { } = passResetSlice.actions;
-
 export default passResetSlice.reducer;

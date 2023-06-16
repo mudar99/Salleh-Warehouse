@@ -59,6 +59,4 @@ export const suggestionsSlice = createSlice({
     }
 });
 
-export const { } = suggestionsSlice.actions;
-
 export default suggestionsSlice.reducer;

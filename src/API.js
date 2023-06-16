@@ -15,7 +15,7 @@ export const SendAuthFilesAPI = `${local}/api/store/file/send`;
 export const SendVerCodeAPI = `${local}/api/store/mail`;
 export const VerificationAPI = `${local}/api/store/mail/verify`;
 
-export const GetWaitingPurchaseOrdersAPI = `${local}/api/store/purchase/order/get?size=`;
+export const GetWaitingPurchaseOrdersAPI = `${local}/api/store/purchase/order/waiting/get?size=`;
 export const GetAcceptedPurchaseOrdersAPI = `${local}/api/store/purchase/order/accepted/get?size=`;
 export const GetRejectedPurchaseOrdersAPI = `${local}/api/store/purchase/order/rejected/get?size=`;
 export const AcceptPurchaseOrderAPI = `${local}/api/store/purchase/order/accept/`;

@@ -79,6 +79,7 @@ const Settings = () => {
 
       <Dialog
         maximizable
+        maximizeIcon="pi pi-arrows-alt"
         header="إرسال مرفقات توثيق الحساب"
         visible={accoutVer}
         style={{ width: "50vw" }}

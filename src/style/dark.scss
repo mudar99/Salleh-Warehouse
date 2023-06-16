@@ -157,6 +157,9 @@
     color: $dark-font-color;
     border-color: $hover-color;
     background-color: $dark-secondary;
+    .item {
+      color: $dark-font-color;
+    }
     .search {
       .p-inputtext {
         border-color: $dark-font-color;
@@ -429,6 +432,37 @@
     .p-fileupload-content {
       background-color: #212529;
       color: $dark-font-color;
+    }
+  }
+
+  .purchase-orders {
+    .selection-container {
+      .selection {
+        box-shadow: 2px 4px 10px 1px $dark-box-shadow;
+        background-color: $dark-secondary;
+      }
+    }
+  }
+
+  .p-dropdown {
+    background-color: $dark-secondary;
+    .p-dropdown-label {
+      color: $dark-font-color;
+    }
+    .p-dropdown-items-wrapper {
+      background-color: $dark-secondary;
+      .p-dropdown-items {
+        .p-dropdown-item {
+          &.p-highlight {
+            background: $dark-box-shadow;
+          }
+          color: $dark-font-color;
+          &:hover {
+            background-color: $hover-color;
+            color: $dark-font-color;
+          }
+        }
+      }
     }
   }
   input {

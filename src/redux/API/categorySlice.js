@@ -42,20 +42,7 @@ export const categorySlice = createSlice({
         }).addCase(GetCategories.rejected, (state, { payload }) => {
             state.loading = false;
         })
-
-        // builder.addCase(GetChildCat.pending, (state) => {
-        //     state.btnLoading = true;
-        // }).addCase(GetChildCat.fulfilled, (state, { payload }) => {
-        //     console.log(payload)
-        //     if (payload.data.length !== 0)
-        //         state.children = payload.data
-        //     state.btnLoading = false;
-        // }).addCase(GetChildCat.rejected, (state, { payload }) => {
-        //     state.btnLoading = false;
-        // })
     }
 });
-
-export const { } = categorySlice.actions;
 
 export default categorySlice.reducer;

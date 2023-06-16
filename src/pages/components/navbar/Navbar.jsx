@@ -30,27 +30,13 @@ const Navbar = (props) => {
             <div className="counter">2</div>
           </div>
           <div className="item">
-            <i className="bi bi-envelope-fill"></i>
-            <div className="counter">1</div>
-          </div>
-          <div className="item">
             <i
               className="bi bi-moon-fill"
               onClick={() => dispatch(toggle())}
             ></i>
           </div>
-          <div className="item">
-            <i className="bi bi-folder-fill"></i>
-          </div>
-          <div className="item">
-            <i className="bi bi-globe"></i>
-          </div>
         </div>
 
-        {/* <div className="search">
-          <input type="text" placeholder="البحث" />
-          <i className="pi pi-search"></i>
-        </div> */}
 
         <span className="search p-input-icon-left">
           <i className="pi pi-search" />

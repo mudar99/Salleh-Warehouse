@@ -64,6 +64,4 @@ export const mailVerSlice = createSlice({
     }
 });
 
-export const { } = mailVerSlice.actions;
-
 export default mailVerSlice.reducer;

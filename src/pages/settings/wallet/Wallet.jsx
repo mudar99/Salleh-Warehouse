@@ -16,7 +16,7 @@ const Wallet = (props) => {
   );
   const dispatch = useDispatch();
   const toast = useRef();
-  console.log(walletStatus)
+  console.log(walletStatus);
   useEffect(() => {
     dispatch(GetWalletStatus());
     walletStatus && dispatch(GetMyBalance());

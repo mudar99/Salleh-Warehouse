@@ -40,6 +40,4 @@ export const sendfilesSlice = createSlice({
     }
 });
 
-export const { } = sendfilesSlice.actions;
-
 export default sendfilesSlice.reducer;

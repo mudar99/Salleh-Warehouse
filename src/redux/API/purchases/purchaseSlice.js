@@ -120,6 +120,4 @@ export const purchaseSlice = createSlice({
     }
 });
 
-export const { } = purchaseSlice.actions;
-
 export default purchaseSlice.reducer;

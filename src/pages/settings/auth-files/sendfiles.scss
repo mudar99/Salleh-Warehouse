@@ -10,4 +10,36 @@
   .filepond--credits {
     display: none;
   }
+  .leaflet-container {
+    .leaflet-control-container {
+      .leaflet-right {
+        display: none;
+      }
+      .leaflet-left {
+        .leaflet-control-zoom-in,
+        .leaflet-control-zoom-out {
+          color: $header-color;
+          background-color: $nav-color;
+        }
+      }
+      .leaflet-control-geosearch {
+        background-color: $nav-color;
+        form {
+          background-color: $nav-color;
+          .glass::placeholder,
+          .glass {
+            direction: rtl;
+            margin-right: 10px;
+            font-weight: bold;
+            color: $header-color; /* Replace "red" with your desired color */
+          }
+          .reset {
+            font-weight: bold;
+            background-color: $body-color;
+            color: $header-color;
+          }
+        }
+      }
+    }
+  }
 }
