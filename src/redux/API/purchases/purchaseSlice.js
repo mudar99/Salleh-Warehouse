@@ -32,24 +32,24 @@ export const GetRejectedPurchases = createAsyncThunk("storehouse/purchases/rejec
     return data;
 });
 
-export const AcceptPurshaseOrder = createAsyncThunk("storehouse/purchases/accept", async (info, { rejectWithValue }) => {
+export const AcceptPurshaseOrder = createAsyncThunk("storehouse/purchases/accept", async (id, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
     try {
-        let { data } = await axios.post(AcceptPurchaseOrderAPI, info);
+        let { data } = await axios.put(AcceptPurchaseOrderAPI + id);
         console.log(data)
         return data;
     } catch (error) {
         return rejectWithValue(error.response.data.message);
     }
 });
-export const RejectPurchaseOrder = createAsyncThunk("storehouse/purchases/reject", async (info, { rejectWithValue }) => {
+export const RejectPurchaseOrder = createAsyncThunk("storehouse/purchases/reject", async (id, { rejectWithValue }) => {
     axios.defaults.headers = {
         Authorization: `Bearer ${token}`,
     }
     try {
-        let { data } = await axios.post(RejectPurchaseOrderAPI, info);
+        let { data } = await axios.put(RejectPurchaseOrderAPI + id);
         console.log(data)
         return data;
     } catch (error) {
@@ -60,10 +60,8 @@ export const purchaseSlice = createSlice({
     name: "purchaseSlice",
     initialState: {
         data: [],
-        btnLoading: null,
         loading: null,
         totalItems: "",
-        currentPage: "",
     },
     reducers: {},
     extraReducers: (builder) => {
@@ -73,7 +71,6 @@ export const purchaseSlice = createSlice({
             console.log(payload)
             state.data = payload.data.data;
             state.totalItems = payload.data.total
-            state.currentPage = payload.data.current_page
             state.loading = false;
         }).addCase(GetWaitingPurchases.rejected, (state, { payload }) => {
             state.loading = false;
@@ -85,7 +82,6 @@ export const purchaseSlice = createSlice({
             console.log(payload)
             state.data = payload.data.data;
             state.totalItems = payload.data.total
-            state.currentPage = payload.data.current_page
             state.loading = false;
         }).addCase(GetAcceptedPurchases.rejected, (state, { payload }) => {
             state.loading = false;
@@ -96,26 +92,25 @@ export const purchaseSlice = createSlice({
             console.log(payload)
             state.data = payload.data.data;
             state.totalItems = payload.data.total
-            state.currentPage = payload.data.current_page
             state.loading = false;
         }).addCase(GetRejectedPurchases.rejected, (state, { payload }) => {
             state.loading = false;
         })
 
         builder.addCase(AcceptPurshaseOrder.pending, (state) => {
-            state.btnLoading = true;
+            state.loading = true;
         }).addCase(AcceptPurshaseOrder.fulfilled, (state, { payload }) => {
-            state.btnLoading = false;
+            state.loading = false;
         }).addCase(AcceptPurshaseOrder.rejected, (state, { payload }) => {
-            state.btnLoading = false;
+            state.loading = false;
         })
 
         builder.addCase(RejectPurchaseOrder.pending, (state) => {
-            state.btnLoading = true;
+            state.loading = true;
         }).addCase(RejectPurchaseOrder.fulfilled, (state, { payload }) => {
-            state.btnLoading = false;
+            state.loading = false;
         }).addCase(RejectPurchaseOrder.rejected, (state, { payload }) => {
-            state.btnLoading = false;
+            state.loading = false;
         })
     }
 });

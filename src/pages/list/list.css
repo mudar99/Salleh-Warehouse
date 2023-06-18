@@ -68,7 +68,7 @@
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   word-wrap: break-word;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);
           box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);

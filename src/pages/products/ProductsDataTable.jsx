@@ -92,11 +92,6 @@ const ProductsDataTable = (props) => {
       <div className="card">
         <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
           <Column align="center" header={headers[0]} field="name"></Column>
-          <Column
-            align="center"
-            header={headers[1]}
-            field="created_at"
-          ></Column>
           <Column align="center" header={headers[2]} field={"price"}></Column>
           <Column align="center" header={headers[3]} field="quantity"></Column>
           <Column align="center" header={headers[4]} field="made"></Column>
@@ -107,6 +102,11 @@ const ProductsDataTable = (props) => {
             }}
             header={headers[5]}
             field="description"
+          ></Column>
+          <Column
+            align="center"
+            header={headers[1]}
+            field="created_at"
           ></Column>
           <Column
             align="center"

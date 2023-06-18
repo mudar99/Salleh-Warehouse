@@ -1,0 +1,99 @@
+.suggestions-datatable {
+  margin: 50px;
+}
+
+.suggestions-datatable .suggestions {
+  margin: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.suggestions-datatable .suggestions .suggestion {
+  padding: 15px;
+  -webkit-box-shadow: 2px 4px 10px 1px #c9c9c9;
+          box-shadow: 2px 4px 10px 1px #c9c9c9;
+  border-radius: 10px;
+  height: auto;
+  background-color: #ffffff;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+.suggestions-datatable .suggestions .suggestion:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 4px 6px 12px 2px #c9c9c9;
+          box-shadow: 4px 6px 12px 2px #c9c9c9;
+}
+
+.suggestions-datatable .suggestions .suggestion .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #daa520;
+  margin-bottom: 8px;
+  padding-bottom: 15px;
+}
+
+.suggestions-datatable .suggestions .suggestion .description {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #212121;
+}
+
+.suggestions-datatable .suggestions .suggestion .arabic {
+  text-align: right;
+}
+
+.suggestions-datatable .suggestions .suggestion .english {
+  text-align: left;
+}
+
+.suggestions-datatable .action {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.suggestions-datatable .action .add-suggestion {
+  position: relative;
+  padding: 15px;
+  -webkit-box-shadow: 2px 4px 10px 1px #c9c9c9;
+          box-shadow: 2px 4px 10px 1px #c9c9c9;
+  border-radius: 10px;
+  height: auto;
+  background-color: #ffffff;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  width: 150px;
+  height: 150px;
+}
+
+.suggestions-datatable .action .add-suggestion .plus-icon {
+  color: #4a8bdf;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+
+.suggestions-datatable .action .add-suggestion:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 4px 6px 12px 2px #565656;
+          box-shadow: 4px 6px 12px 2px #565656;
+}
+/*# sourceMappingURL=suggestions.css.map */

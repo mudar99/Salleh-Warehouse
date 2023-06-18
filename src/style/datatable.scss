@@ -34,6 +34,9 @@
     margin-right: 10px;
     color: $primary-color;
   }
+  .p-datatable .p-datatable-tbody > tr {
+    word-break: break-word;
+  }
   .p-datatable .p-datatable-tbody > tr > .arabic {
     text-align: right;
     direction: rtl;

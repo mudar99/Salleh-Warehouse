@@ -26,6 +26,16 @@
   text-align: right;
 }
 
+.categories .treetable .p-treetable .p-treetable-tbody > tr > .arabic {
+  text-align: right;
+  direction: rtl;
+}
+
+.categories .treetable .p-treetable .p-treetable-tbody > tr > .english {
+  text-align: left;
+  direction: ltr;
+}
+
 .categories .treetable .p-treetable .p-treetable-tbody > tr.p-highlight,
 .categories .treetable .p-treetable .p-treetable-tbody > tr.p-highlight .p-treetable-toggler {
   color: #daa520;
@@ -42,7 +52,9 @@
           transform: rotate(180deg);
 }
 
-.categories .treetable .p-paginator {
-  direction: ltr;
+.categories .treetable img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
 }
 /*# sourceMappingURL=categories.css.map */

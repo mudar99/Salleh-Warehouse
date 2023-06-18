@@ -12,6 +12,7 @@ import Profile from './pages/profile/Profile';
 import Purchases from './pages/purchases/Purchases';
 import Complaints from './pages/complaints/Complaints';
 import Suggestions from './pages/suggestions/Suggestions';
+import Notifications from './Notifications';
 
 function App() {
   const { darkMode } = useSelector((state) => state.DarkMode);
@@ -40,13 +41,17 @@ function App() {
             <Route path='complaints' >
               <Route index element={<Complaints />} />
             </Route>
-            
+
             <Route path='suggestions' >
               <Route index element={<Suggestions />} />
             </Route>
 
             <Route path='profile' >
               <Route index element={<Profile />} />
+            </Route>
+
+            <Route path='notifications' >
+              <Route index element={<Notifications />} />
             </Route>
 
             <Route />

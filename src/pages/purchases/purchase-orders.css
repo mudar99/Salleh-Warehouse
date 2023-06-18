@@ -1,0 +1,31 @@
+.purchase-orders .selection-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.purchase-orders .selection-container .selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px;
+  padding: 15px;
+  -webkit-box-shadow: 2px 4px 10px 1px #c9c9c9;
+          box-shadow: 2px 4px 10px 1px #c9c9c9;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 50%;
+}
+
+.purchase-orders .selection-container .selection h6 {
+  margin: 10px;
+  font-weight: bold;
+  color: #daa520;
+}
+/*# sourceMappingURL=purchase-orders.css.map */

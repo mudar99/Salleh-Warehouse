@@ -31,8 +31,7 @@ export const UpdateProduct = (props) => {
     obj.append("price", prodPrice);
     obj.append("product_code", prodCode);
     obj.append("quantity", prodQuantity);
-    // if (prodPhoto !== undefined)
-    obj.append("product_photo", prodPhoto);
+    if (prodPhoto !== undefined) obj.append("product_photo", prodPhoto);
     let data = { id: props.data.id, obj };
     console.log(prodQuantity);
     dispatch(updateApi(data)).then((res) => {

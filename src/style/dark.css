@@ -137,6 +137,10 @@
   background-color: #212121;
 }
 
+.app.dark .navbar .item {
+  color: #c9c9c9;
+}
+
 .app.dark .navbar .search .p-inputtext {
   border-color: #c9c9c9;
 }
@@ -248,10 +252,6 @@
   color: #c9c9c9;
 }
 
-.app.dark .datatable .p-paginator {
-  background-color: #212121;
-}
-
 .app.dark .featured {
   background-color: #212121;
   -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
@@ -322,10 +322,6 @@
   color: #c9c9c9;
 }
 
-.app.dark .categories .treetable .p-paginator {
-  background-color: #212121;
-}
-
 .app.dark .profileContent .profile-card {
   -webkit-box-shadow: 0px 8px 60px -10px #2e2e2e;
           box-shadow: 0px 8px 60px -10px #2e2e2e;
@@ -342,6 +338,143 @@
 
 .app.dark .profileContent .profile-card-loc {
   color: #daa520;
+}
+
+.app.dark .suggestions-datatable .suggestions .suggestion,
+.app.dark .suggestions-datatable .suggestions .complaint,
+.app.dark .suggestions-datatable .complaints .suggestion,
+.app.dark .suggestions-datatable .complaints .complaint,
+.app.dark .complaints-datatable .suggestions .suggestion,
+.app.dark .complaints-datatable .suggestions .complaint,
+.app.dark .complaints-datatable .complaints .suggestion,
+.app.dark .complaints-datatable .complaints .complaint {
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+  background-color: #212121;
+}
+
+.app.dark .suggestions-datatable .suggestions .suggestion:hover,
+.app.dark .suggestions-datatable .suggestions .complaint:hover,
+.app.dark .suggestions-datatable .complaints .suggestion:hover,
+.app.dark .suggestions-datatable .complaints .complaint:hover,
+.app.dark .complaints-datatable .suggestions .suggestion:hover,
+.app.dark .complaints-datatable .suggestions .complaint:hover,
+.app.dark .complaints-datatable .complaints .suggestion:hover,
+.app.dark .complaints-datatable .complaints .complaint:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 4px 6px 12px 2px #2e2e2e;
+          box-shadow: 4px 6px 12px 2px #2e2e2e;
+}
+
+.app.dark .suggestions-datatable .suggestions .suggestion .title,
+.app.dark .suggestions-datatable .suggestions .complaint .title,
+.app.dark .suggestions-datatable .complaints .suggestion .title,
+.app.dark .suggestions-datatable .complaints .complaint .title,
+.app.dark .complaints-datatable .suggestions .suggestion .title,
+.app.dark .complaints-datatable .suggestions .complaint .title,
+.app.dark .complaints-datatable .complaints .suggestion .title,
+.app.dark .complaints-datatable .complaints .complaint .title {
+  color: #daa520;
+}
+
+.app.dark .suggestions-datatable .suggestions .suggestion .description,
+.app.dark .suggestions-datatable .suggestions .complaint .description,
+.app.dark .suggestions-datatable .complaints .suggestion .description,
+.app.dark .suggestions-datatable .complaints .complaint .description,
+.app.dark .complaints-datatable .suggestions .suggestion .description,
+.app.dark .complaints-datatable .suggestions .complaint .description,
+.app.dark .complaints-datatable .complaints .suggestion .description,
+.app.dark .complaints-datatable .complaints .complaint .description {
+  color: #c9c9c9;
+}
+
+.app.dark .suggestions-datatable .suggestions .suggestion .arabic,
+.app.dark .suggestions-datatable .suggestions .complaint .arabic,
+.app.dark .suggestions-datatable .complaints .suggestion .arabic,
+.app.dark .suggestions-datatable .complaints .complaint .arabic,
+.app.dark .complaints-datatable .suggestions .suggestion .arabic,
+.app.dark .complaints-datatable .suggestions .complaint .arabic,
+.app.dark .complaints-datatable .complaints .suggestion .arabic,
+.app.dark .complaints-datatable .complaints .complaint .arabic {
+  text-align: right;
+}
+
+.app.dark .suggestions-datatable .suggestions .suggestion .english,
+.app.dark .suggestions-datatable .suggestions .complaint .english,
+.app.dark .suggestions-datatable .complaints .suggestion .english,
+.app.dark .suggestions-datatable .complaints .complaint .english,
+.app.dark .complaints-datatable .suggestions .suggestion .english,
+.app.dark .complaints-datatable .suggestions .complaint .english,
+.app.dark .complaints-datatable .complaints .suggestion .english,
+.app.dark .complaints-datatable .complaints .complaint .english {
+  text-align: left;
+}
+
+.app.dark .suggestions-datatable .action .add-suggestion,
+.app.dark .suggestions-datatable .action .add-complaint,
+.app.dark .complaints-datatable .action .add-suggestion,
+.app.dark .complaints-datatable .action .add-complaint {
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+  background-color: #212121;
+}
+
+.app.dark .suggestions-datatable .action .add-suggestion:hover,
+.app.dark .suggestions-datatable .action .add-complaint:hover,
+.app.dark .complaints-datatable .action .add-suggestion:hover,
+.app.dark .complaints-datatable .action .add-complaint:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 4px 6px 12px 2px #2e2e2e;
+          box-shadow: 4px 6px 12px 2px #2e2e2e;
+}
+
+.app.dark .p-paginator {
+  background-color: #212121;
+}
+
+.app.dark .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #2e2e2e;
+  color: #c9c9c9;
+}
+
+.app.dark .p-fileupload .p-fileupload-buttonbar {
+  background-color: #212529;
+}
+
+.app.dark .p-fileupload .p-fileupload-content {
+  background-color: #212529;
+  color: #c9c9c9;
+}
+
+.app.dark .purchase-orders .selection-container .selection {
+  -webkit-box-shadow: 2px 4px 10px 1px #2e2e2e;
+          box-shadow: 2px 4px 10px 1px #2e2e2e;
+  background-color: #212121;
+}
+
+.app.dark .p-dropdown {
+  background-color: #212121;
+}
+
+.app.dark .p-dropdown .p-dropdown-label {
+  color: #c9c9c9;
+}
+
+.app.dark .p-dropdown .p-dropdown-items-wrapper {
+  background-color: #212121;
+}
+
+.app.dark .p-dropdown .p-dropdown-items-wrapper .p-dropdown-items .p-dropdown-item {
+  color: #c9c9c9;
+}
+
+.app.dark .p-dropdown .p-dropdown-items-wrapper .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: #2e2e2e;
+}
+
+.app.dark .p-dropdown .p-dropdown-items-wrapper .p-dropdown-items .p-dropdown-item:hover {
+  background-color: #2e2e2e;
+  color: #c9c9c9;
 }
 
 .app.dark input {

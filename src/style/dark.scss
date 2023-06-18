@@ -210,31 +210,6 @@
         }
       }
     }
-
-    .p-confirm-popup {
-      border: solid 1px $hover-color;
-      .p-confirm-popup-icon {
-        color: crimson;
-      }
-      background-color: $dark-secondary;
-      .p-confirm-popup-message {
-        color: $dark-font-color;
-      }
-      .p-confirm-popup-footer {
-        .p-button-danger {
-          .p-button-label {
-            color: $home-color;
-          }
-          background: crimson;
-        }
-        .p-button-text {
-          background: $dark-box-shadow;
-          .p-button-label {
-            color: $dark-font-color;
-          }
-        }
-      }
-    }
   }
 
   .widget {
@@ -465,6 +440,31 @@
       }
     }
   }
+  .p-confirm-popup {
+    border: solid 1px $hover-color;
+    .p-confirm-popup-icon {
+      color: crimson;
+    }
+    background-color: $dark-secondary;
+    .p-confirm-popup-message {
+      color: $dark-font-color;
+    }
+    .p-confirm-popup-footer {
+      .p-button-danger {
+        .p-button-label {
+          color: $home-color;
+        }
+        background: crimson;
+      }
+      .p-button-text {
+        background: $dark-box-shadow;
+        .p-button-label {
+          color: $dark-font-color;
+        }
+      }
+    }
+  }
+
   input {
     background-color: transparent;
     color: $dark-secondary;

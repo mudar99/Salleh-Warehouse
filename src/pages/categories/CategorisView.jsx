@@ -21,11 +21,10 @@ const CategorisView = (props) => {
   const [capacity, setCapacity] = useState(2);
   const [counter, setCounter] = useState(1);
   const [loadPlace, setLoadPlace] = useState();
-  const { data, totalItems } = useSelector((state) => state.categories);
+  const { data, totalItems, loading } = useSelector(
+    (state) => state.categories
+  );
   // console.log(data);
-  // let [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
   const onBasicPageChange = (event) => {
     let currentPage = event.page + 1;
     setCurrentPage(currentPage);

@@ -58,7 +58,6 @@ body {
 .p-dialog input {
   height: 40px;
   font-size: 18px;
-  text-align: left;
   direction: ltr;
 }
 
@@ -69,6 +68,16 @@ body {
 .p-dialog input:focus {
   -webkit-box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
           box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.p-dialog .arabic {
+  direction: rtl;
+  text-align: right;
+}
+
+.p-dialog .english {
+  direction: ltr;
+  text-align: left;
 }
 
 .p-dialog .actions {
@@ -98,5 +107,29 @@ body {
 .leaflet-container {
   width: 80vw;
   height: 40vw;
+}
+
+.p-paginator {
+  direction: ltr;
+}
+
+.p-fileupload {
+  direction: ltr;
+}
+
+.p-fileupload button[aria-label="Upload"] {
+  display: none;
+}
+
+.p-fileupload .p-fileupload-content {
+  width: 50vw;
+  height: 15vw;
+}
+
+.p-fileupload .p-fileupload-content img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */

@@ -49,12 +49,7 @@
 }
 
 .navbar .wrapper .items .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  color: #4a8bdf;
   margin-right: 20px;
   position: relative;
   -webkit-transition: all 0.2s;

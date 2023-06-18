@@ -12,7 +12,7 @@ const ComplaintsDataTable = (props) => {
   const toast = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [basicFirst, setBasicFirst] = useState(1);
-  const [basicRows, setBasicRows] = useState(6);
+  const [basicRows, setBasicRows] = useState(3);
   const { data, loading, btnLoading, totalItems } = useSelector(
     (state) => state.complaints
   );

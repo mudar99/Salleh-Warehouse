@@ -19,7 +19,7 @@ const Wallet = (props) => {
   console.log(walletStatus);
   useEffect(() => {
     dispatch(GetWalletStatus());
-    walletStatus && dispatch(GetMyBalance());
+    dispatch(GetMyBalance());
   }, [btnLoading]);
 
   const handleCreateWallet = () => {

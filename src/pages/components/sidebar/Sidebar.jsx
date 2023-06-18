@@ -80,7 +80,7 @@ const Sidebar = () => {
               onClick={() => dispatch(products())}
             >
               <li className={currentPlace === "products" ? "visited" : ""}>
-                <i className="bi bi-people-fill"></i>
+                <i className="bi bi-bag-heart-fill"></i>
                 <span>منتجات</span>
               </li>
             </Link>

@@ -5,7 +5,7 @@ import { Button } from "primereact/button";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingFS from "../components/loading/LoadingFS";
 import "./purchase-orders.scss";
-import { showInfo, showSuccess } from "../../ToastService";
+import { showError, showInfo, showSuccess } from "../../ToastService";
 import { confirmPopup } from "primereact/confirmpopup";
 import { Toast } from "primereact/toast";
 import { Paginator } from "primereact/paginator";
@@ -20,7 +20,7 @@ import {
 import { Dropdown } from "primereact/dropdown";
 
 const PurchasesDataTable = (props) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("waiting");
   const options = [
     { label: "المقبولة", value: "accepted" },
     { label: "المرفوضة", value: "rejected" },
@@ -30,14 +30,11 @@ const PurchasesDataTable = (props) => {
     setSelectedOption(e.value);
   };
   const dispatch = useDispatch();
-  const { data, loading, btnLoading, totalItems } = useSelector(
-    (state) => state.purchases
-  );
+  const { data, loading, totalItems } = useSelector((state) => state.purchases);
   const toast = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [basicFirst, setBasicFirst] = useState(1);
   const [basicRows, setBasicRows] = useState(5);
-
   useEffect(() => {
     let info = { size: basicRows, page: currentPage };
     switch (selectedOption) {
@@ -55,20 +52,27 @@ const PurchasesDataTable = (props) => {
     }
     console.log(selectedOption);
   }, [selectedOption]);
-  const headers = [
-    "اسم المنتج",
-    "تاريخ الإضافة",
-    "السعر",
-    "الكمية",
-    "البلد المصنع",
-    "وصف",
-    "صورة المنتج",
-    "حدث",
-  ];
+
+  const getPurchases = (info) => {
+    switch (selectedOption) {
+      case "accepted":
+        dispatch(GetAcceptedPurchases(info));
+        break;
+      case "rejected":
+        dispatch(GetRejectedPurchases(info));
+        break;
+      case "waiting":
+        dispatch(GetWaitingPurchases(info));
+        break;
+      default:
+        break;
+    }
+  };
   const acitonBodyTemplate = (rowData) => {
     return (
       <>
         <Button
+          disabled={selectedOption !== "waiting"}
           icon="pi pi-check"
           rounded
           text
@@ -85,13 +89,15 @@ const PurchasesDataTable = (props) => {
               acceptClassName: "p-button-danger",
               rejectClassName: "p-button-text",
               accept: () => {
+                let info = { size: basicRows, page: currentPage };
                 dispatch(AcceptPurshaseOrder(rowData.id)).then((res) => {
                   console.log(res);
                   if (res.payload.status === true) {
                     showSuccess(res.payload.message, toast);
-                    // dispatch(GetProducts(info));
+                    getPurchases(info);
                     return;
                   }
+                  showError(res.payload.message, toast);
                 });
               },
               reject: () => {
@@ -102,6 +108,7 @@ const PurchasesDataTable = (props) => {
           }}
         />
         <Button
+          disabled={selectedOption !== "waiting"}
           icon="pi pi-times"
           rounded
           text
@@ -118,14 +125,16 @@ const PurchasesDataTable = (props) => {
               acceptClassName: "p-button-danger",
               rejectClassName: "p-button-text",
               accept: () => {
+                let info = { size: basicRows, page: currentPage };
                 dispatch(RejectPurchaseOrder(rowData.id)).then((res) => {
                   console.log(res);
                   if (res.payload.status === true) {
                     showSuccess(res.payload.message, toast);
-                    // dispatch(GetProducts());
                     setSelectedOption(selectedOption);
+                    getPurchases(info);
                     return;
                   }
+                  showError(res.payload.message, toast);
                 });
               },
               reject: () => {
@@ -144,7 +153,7 @@ const PurchasesDataTable = (props) => {
     setBasicFirst(event.first);
     setBasicRows(event.rows);
     let info = { size: basicRows, page: currentPage };
-    // dispatch(GetProducts(info));
+    getPurchases(info);
   };
   return (
     <div className="purchase-orders">
@@ -163,44 +172,28 @@ const PurchasesDataTable = (props) => {
           </div>
         </div>
       </div>
-
       <div className="datatable">
         {loading && <LoadingFS />}
         <div className="card">
           <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
-            <Column align="center" header={headers[0]} field="name"></Column>
+            <Column align="center" header={"المعرف"} field="id"></Column>
             <Column
               align="center"
-              header={headers[1]}
-              field="created_at"
-            ></Column>
-            <Column align="center" header={headers[2]} field={"price"}></Column>
-            <Column
-              align="center"
-              header={headers[3]}
-              field="quantity"
-            ></Column>
-            <Column align="center" header={headers[4]} field="made"></Column>
-            <Column
-              align="center"
-              header={headers[5]}
-              field="description"
-            ></Column>
-            <Column
-              align="center"
-              header={headers[6]}
+              header="طريقة الدفع"
               body={(rowData) => {
-                return (
-                  <img
-                    src={local + rowData.image_path}
-                    style={{ width: "100px" }}
-                  />
-                );
+                return rowData.payment_method === 0 ? "كاش" : "محفظة";
               }}
             ></Column>
+            <Column align="center" header="المنتج" field="product_id"></Column>
+            <Column align="center" header="الكمية" field="quantity"></Column>
             <Column
               align="center"
-              header={headers[7]}
+              field="created_at"
+              header="تاريخ الإنشاء"
+            ></Column>
+            <Column
+              align="center"
+              header="حدث"
               field="action"
               body={acitonBodyTemplate}
             ></Column>
@@ -209,7 +202,7 @@ const PurchasesDataTable = (props) => {
           <Paginator
             first={basicFirst}
             rows={basicRows}
-            //   totalRecords={totalItems}
+            totalRecords={totalItems}
             onPageChange={onBasicPageChange}
           ></Paginator>
         </div>

@@ -9,4 +9,64 @@
 .sendFiles .filepond--credits {
   display: none;
 }
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-right {
+  display: none;
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-left .leaflet-control-zoom-in,
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-left .leaflet-control-zoom-out {
+  color: #daa520;
+  background-color: #ffffff;
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch {
+  background-color: #ffffff;
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form {
+  background-color: #ffffff;
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass::-webkit-input-placeholder,
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass {
+  direction: rtl;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #daa520;
+  /* Replace "red" with your desired color */
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass:-ms-input-placeholder,
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass {
+  direction: rtl;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #daa520;
+  /* Replace "red" with your desired color */
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass::-ms-input-placeholder,
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass {
+  direction: rtl;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #daa520;
+  /* Replace "red" with your desired color */
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass::placeholder,
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .glass {
+  direction: rtl;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #daa520;
+  /* Replace "red" with your desired color */
+}
+
+.sendFiles .leaflet-container .leaflet-control-container .leaflet-control-geosearch form .reset {
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #daa520;
+}
 /*# sourceMappingURL=sendfiles.css.map */

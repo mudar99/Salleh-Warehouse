@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACE,OADK,CACL,MAAM,CAAC;EACL,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,UAAU,ECSD,OAAO;EDRhB,KAAK,ECII,OAAO;EDHhB,YAAY,ECOH,OAAO;CDNjB",
+    "sources": [
+        "wallet.scss",
+        "../../../style/_vars.scss"
+    ],
+    "names": [],
+    "file": "wallet.css"
+}
