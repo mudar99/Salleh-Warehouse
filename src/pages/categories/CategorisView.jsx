@@ -56,6 +56,8 @@ const CategorisView = (props) => {
       return (
         <div className="text-center">
           <Button
+            tooltip="المزيد من الأبناء"
+            tooltipOptions={{ position: "top" }}
             className="p-button-rounded p-button-text p-button-success"
             dir="ltr"
             icon="pi pi-spinner"

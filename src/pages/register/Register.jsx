@@ -119,7 +119,7 @@ const Register = (props) => {
               </span>
             </div>
           </div>
-          <div className="card">
+          <div className="">
             <span className="p-float-label">
               <InputText
                 required
@@ -135,7 +135,7 @@ const Register = (props) => {
             </span>
           </div>
 
-          <div className="card">
+          <div className="">
             <span className="p-float-label">
               <InputText
                 required
@@ -151,7 +151,7 @@ const Register = (props) => {
             </span>
           </div>
 
-          <div className="card">
+          <div className="">
             <span className="p-float-label">
               <InputText
                 required
@@ -168,7 +168,7 @@ const Register = (props) => {
             </span>
           </div>
 
-          <div className="card">
+          <div className="">
             <span className="p-float-label">
               <InputText
                 required
@@ -185,7 +185,7 @@ const Register = (props) => {
             </span>
           </div>
 
-          <div className="card">
+          <div className="">
             <span className="p-float-label">
               <InputText
                 required

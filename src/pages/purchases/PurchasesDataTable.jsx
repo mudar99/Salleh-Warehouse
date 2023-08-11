@@ -174,7 +174,7 @@ const PurchasesDataTable = (props) => {
       </div>
       <div className="datatable">
         {loading && <LoadingFS />}
-        <div className="card">
+        <div className="">
           <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
             <Column align="center" header={"المعرف"} field="id"></Column>
             <Column
